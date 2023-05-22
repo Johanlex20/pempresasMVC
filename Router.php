@@ -24,8 +24,10 @@ class Router {
         } else {
             echo "Página No Encontrada";
         }
+    }
 
-
-
+    //MOSTRANDO UNA VISTA
+    public function render($view){
+        include __DIR__ . "/views/$view.php";
     }
 }
