@@ -1,0 +1,82 @@
+@use 'base/variables' as v;
+
+//validacion de registro
+
+.alerta{
+    padding: 2px;
+    text-align: center;
+    color: v.$tex-white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin: auto; //estaba 2px pero con esto lo centro
+
+    &.error{
+        background-color: v.$rojo;
+    }
+
+    &.exito{
+        font-size: 20px;
+        color:v.$color-boton;
+        background-color: v.$tex-white;
+        max-width: 410px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    &.exito-verde{
+        font-size: 20px;
+        color:v.$tex-white;
+        background: linear-gradient(to right, v.$green, v.$lead);
+        max-width: 410px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    &.exito-rojo{
+        font-size: 20px;
+        color:v.$tex-white;
+        background: linear-gradient(to right, v.$rojo, v.$lead);
+        max-width: 410px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+}
+
+
+table.aprendiz {
+    margin-top: 1rem;
+    width: 100%;
+    border-spacing: 0;
+
+    thead{
+        background-color: v.$gris;
+    }
+    th { //parte gris de la tabla de consulta
+        color: v.$tex-white;
+        padding: 5px;       
+    }
+    td{
+        padding: 5px;
+        a{
+            color: v.$tex-white;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+        }
+    }   
+    .imagen-tabla{
+        width: 5rem;
+        border-radius: 15%;
+        padding: 0;
+        margin: 0; 
+    }
+}
+
+.imagen-small {
+    width: 10rem;
+}
+
+
+
+
+
+
