@@ -27,7 +27,11 @@ class Router {
     }
 
     //MOSTRANDO UNA VISTA
-    public function render($view){
+    public function render($view, $datos = [] ){
+
+        foreach($datos as $key => $value){
+            $$key = $value;
+        }
 
         ob_start(); // Almacenamiento en memoria durante un momento...
         include __DIR__ . "/views/$view.php";
