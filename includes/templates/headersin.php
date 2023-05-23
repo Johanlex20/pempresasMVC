@@ -21,30 +21,3 @@
 </head>
 <body>
    
-    <!-- <header> --
-
-        <div class="contenedor_menu">
-            <div class="logo">
-                <img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="logo-Sena">
-            </div>
-            <div class="menu">
-                <i class="fa-solid fa-bars" id="boton_minimenu"></i>
-                <div id="mini_menu"></div>
-                <nav id="nav">
-                     <img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="">  
-                    <ul>
-                        <li><a href="index.php">HOME</a></li>
-                        <li><a href="#">Ofertas</a></li>
-                        <li><a href="#">hoja de vida</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="/eleccion-registro-modificacion.php">Registro</a></li>
-                        <li><a href="/login.php">Ingreso</a></li>
-                        <?php  if ($auth): ?>
-                            <li><a href="cerrar-sesion.php">Cerrar Sesión</a></li>
-                        <?php endif; ?>    
-
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header> -->

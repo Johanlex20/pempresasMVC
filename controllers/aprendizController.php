@@ -6,18 +6,22 @@ use Model\aprendiz;
 
 
 class AprendizController{
-    public static function index (Router $router ){
+    public static function index (Router $router){
 
         $aprendiz = aprendiz::all();
         $resultado = null;
 
-        $router->render('aprendiz/admin', [
+        $router->render('admin/admin', [
             'aprendiz' => $aprendiz,
             'resultado' => $resultado
         ]);
     }
-    public static function crear(){
-        echo "CREAR Aprendiz";
+    public static function crear(Router $router){
+        $aprendiz = new aprendiz;
+        
+        $router->render2('aprendiz/crear' , [
+            'aprendiz' => $aprendiz
+        ]);
     }
     public static function actualizar(){
         echo "Actualizar Aprendiz";

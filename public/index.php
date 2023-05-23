@@ -9,7 +9,7 @@ $router = new Router();
 
 
 
-$router->get('/admin', [AprendizController::class, 'index']);
+$router->get('/admin/admin', [AprendizController::class, 'index']);
 $router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
 $router->get('/aprendiz/actualizar', [AprendizController::class, 'actualizar']);
 $router->get('/aprendiz/consultar', [AprendizController::class, 'consultar']);

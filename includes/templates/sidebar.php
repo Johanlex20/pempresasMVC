@@ -7,7 +7,7 @@
             <li> <a href="/admin">PERFIL</a> </li>
             <li> <a href="#">CREAR</a>
                 <ul style="--cantidad-items: 5">
-                    <li> <a href="/admin/propiedades/crear.php">CREAR USUARIO</a> </li>    
+                    <li> <a href="/aprendiz/crear">CREAR USUARIO</a> </li>    
                     <li> <a href="/admin/programas/crearprograma.php">CREAR PROGRAMA</a> </li>
                     <li> <a href="/admin/tipoidentificacion/crearidentificacion.php">CREAR TIPO IDENTIFICACION</a> </li>
                     <li> <a href="/admin/ofertas/crearoferta.php">CREAR OFERTA</a> </li>

@@ -37,6 +37,18 @@ class Router {
         include __DIR__ . "/views/$view.php";
         $contenido = ob_get_clean(); // Limpia el buffer o lo que esta en memoria
         include __DIR__ . "/views/layout.php";
-
     }
+
+        //MOSTRANDO UNA VISTA
+        public function render2($view, $datos = [] ){
+
+            foreach($datos as $key => $value){
+                $$key = $value;
+            }
+    
+            ob_start(); // Almacenamiento en memoria durante un momento...
+            include __DIR__ . "/views/$view.php";
+            $contenido = ob_get_clean(); // Limpia el buffer o lo que esta en memoria
+            include __DIR__ . "/views/layout2.php";
+        }
 }
