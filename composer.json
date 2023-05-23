@@ -1,6 +1,6 @@
 {
     "name": "o.o/pempresas",
-    "description": "crendo Pempresas con POO",
+    "description": "creando Pempresas con POO",
     "type": "project",
     "autoload": {
         "psr-4": {

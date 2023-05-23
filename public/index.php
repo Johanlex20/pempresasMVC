@@ -3,15 +3,14 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
-use Controllers\PropiedadController;
+use Controllers\AprendizController;
 
 $router = new Router();
 
 
 
-$router->get('/admin', [PropiedadController::class, 'index']);
-$router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
-$router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
-$router->get('/propiedades/consultar', [PropiedadController::class, 'consultar']);
-
+$router->get('/admin', [AprendizController::class, 'index']);
+$router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
+$router->get('/aprendiz/actualizar', [AprendizController::class, 'actualizar']);
+$router->get('/aprendiz/consultar', [AprendizController::class, 'consultar']);
 $router->comprobarRutas();
