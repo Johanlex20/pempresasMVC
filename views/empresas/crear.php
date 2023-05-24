@@ -2,15 +2,15 @@
     <div class="contenerdor_formulario">
         <div class="formulario">
                 <div class="cuadro">
-                    <h3>Crear cuenta aprendiz</h3>
-                    <!-- mensaje de validacion complete los datos -->
+                    <h3>Crear cuenta Empresa</h3>
+                   <!-- mensaje de validacion complete los datos -->
                     <?php foreach($errores as $error): ?>  
                         <div class="alerta error">
                             <?php echo $error; ?>
                         </div>
                     <?php endforeach;?> 
-                    <form class="formulario-aprendiz" method ="POST">
-                        <?php include __DIR__ . '/formulario_aprendiz.php'; ?>
+                    <form class="formulario-oferta" method ="POST"  enctype="multipart/form-data">
+                        <?php include __DIR__ . '/formulario_empresas.php'; ?>
                         <button type="submit" class="boton">Crear Cuenta</button>
                     </form>
                     <div class="clic-boton">

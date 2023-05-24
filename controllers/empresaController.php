@@ -2,58 +2,58 @@
 
 namespace Controllers;
 use MVC\Router;
-use Model\aprendiz;
+use Model\Empresas;
 use Model\programa;
 use Model\Tipoidentificacion;
 
 
-class AprendizController{
+class EmpresaController{
     public static function index (Router $router){
 
-        $aprendiz = aprendiz::all();
+        $empresa = Empresas::all();
         $resultado = $_GET ['resultado'] ?? null; //envia el mensaje de creacion de usuario
 
         $router->render('admin/admin', [
-            'aprendiz' => $aprendiz,
+            'empresa' => $empresa,
             'resultado' => $resultado
         ]);
     }
     public static function crear(Router $router){
-        $aprendiz = new aprendiz;
+        $empresa = new Empresas;
         $tipoidentificacion = Tipoidentificacion::all();
         $tipoprogramas = programa::all(); 
         //ARREGLO CON MENSAJES DE ERROR
-        $errores = aprendiz::getErrores();
+        $errores = Empresas::getErrores();
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $aprendiz = new aprendiz($_POST['aprendiz']);
+            $empresa = new Empresas ($_POST['empresa']);
             
-            $errores = $aprendiz->validar();
+            $errores = $empresa->validar();
     
             //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
             if(empty($errores)){  
             //GUARDAR EN LA BD
-            $aprendiz->guardar();
+            $empresa->guardar();
             }
         }
        
         
-        $router->render2('aprendiz/crear' , [
-            'aprendiz' => $aprendiz,
+        $router->render2('empresa/crear' , [
+            'empresa' => $empresa,
             'tipoidentificacion' => $tipoidentificacion,
             'tipoprogramas' => $tipoprogramas,
             'errores' => $errores
         ]);
     }
     public static function actualizar(){
-        echo "Actualizar Aprendiz";
+        echo "Actualizar Empresa";
     }
     public static function consultar(Router $router){
-        $aprendiz = aprendiz::all();
+        $empresa = Empresas::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('aprendiz/consultar' , [
-            'aprendiz' => $aprendiz
+        $router->render2('empresa/consultar' , [
+            'empresa' => $empresa
            
         ]);
     }

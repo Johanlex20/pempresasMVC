@@ -46,10 +46,7 @@ class ActiveRecord {
 
      //MENSAJE DE EXITO O DE ERROR
      if($resultado){
-        echo "Insertado Correctamente";
-        //REDIRECCION DE USUARIO PARA EVITAR DUPLICAR DATOS
-
-        header('Location: /admin/admin?resultado=1'); //header y la funcion Location/ se usa para redireccionar despues de la validacion de registro, Se debe utilizar poco y donde no este presente el HTML, crear la funcion antes de html para evitar errores.
+        header('Location: /admin/admin?resultado=1'); 
         } 
         
     }
