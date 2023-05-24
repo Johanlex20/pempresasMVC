@@ -3,6 +3,8 @@
 namespace Controllers;
 use MVC\Router;
 use Model\aprendiz;
+use Model\programa;
+use Model\Tipoidentificacion;
 
 
 class AprendizController{
@@ -18,9 +20,14 @@ class AprendizController{
     }
     public static function crear(Router $router){
         $aprendiz = new aprendiz;
+        $tipoidentificacion = Tipoidentificacion::all();
+        $tipoprogramas = programa::all(); 
+       
         
         $router->render2('aprendiz/crear' , [
-            'aprendiz' => $aprendiz
+            'aprendiz' => $aprendiz,
+            'tipoidentificacion' => $tipoidentificacion,
+            'tipoprogramas' => $tipoprogramas
         ]);
     }
     public static function actualizar(){
