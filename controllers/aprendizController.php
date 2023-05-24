@@ -11,7 +11,7 @@ class AprendizController{
     public static function index (Router $router){
 
         $aprendiz = aprendiz::all();
-        $resultado = null;
+        $resultado = $_GET ['resultado'] ?? null; //envia el mensaje de creacion de usuario
 
         $router->render('admin/admin', [
             'aprendiz' => $aprendiz,
@@ -22,18 +22,33 @@ class AprendizController{
         $aprendiz = new aprendiz;
         $tipoidentificacion = Tipoidentificacion::all();
         $tipoprogramas = programa::all(); 
+        //ARREGLO CON MENSAJES DE ERROR
+        $errores = aprendiz::getErrores();
+
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $aprendiz = new aprendiz($_POST['aprendiz']);
+            
+            $errores = $aprendiz->validar();
+    
+            //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
+            if(empty($errores)){  
+            //GUARDAR EN LA BD
+            $aprendiz->guardar();
+            }
+        }
        
         
         $router->render2('aprendiz/crear' , [
             'aprendiz' => $aprendiz,
             'tipoidentificacion' => $tipoidentificacion,
-            'tipoprogramas' => $tipoprogramas
+            'tipoprogramas' => $tipoprogramas,
+            'errores' => $errores
         ]);
     }
     public static function actualizar(){
         echo "Actualizar Aprendiz";
     }
     public static function consultar(){
-        echo "Consultar Aprendiz";
+        
     }
 }

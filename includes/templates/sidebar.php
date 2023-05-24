@@ -16,7 +16,7 @@
             </li>
             <li> <a href="#">CONSULTAR</a>
                 <ul style="--cantidad-items: 5">
-                    <li> <a href="/admin/propiedades/consultar.php">CONSULTAR USUARIO</a> </li>    
+                    <li> <a href="/aprendiz/consultar">CONSULTAR USUARIO</a> </li>    
                     <li> <a href="/admin/programas/consultarprograma.php">CONSULTAR PROGRAMA</a> </li>
                     <li> <a href="/admin/tipoidentificacion/consultaridentificacion.php">CONSULTAR TIPO IDENTIFICACION</a> </li>
                     <li> <a href="/admin/ofertas/consultaroferta.php">CONSULTAR OFERTAS</a> </li>
