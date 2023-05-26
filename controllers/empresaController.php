@@ -3,8 +3,8 @@
 namespace Controllers;
 use MVC\Router;
 use Model\Empresas;
-use Model\programa;
 use Model\Tipoidentificacion;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class EmpresaController{
@@ -21,38 +21,93 @@ class EmpresaController{
     public static function crear(Router $router){
         $empresa = new Empresas;
         $tipoidentificacion = Tipoidentificacion::all();
-        $tipoprogramas = programa::all(); 
+        
         //ARREGLO CON MENSAJES DE ERROR
         $errores = Empresas::getErrores();
 
-        if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $empresa = new Empresas ($_POST['empresa']);
-            
+    //EJECUTAR EL CODIGO DESPUES DE QUE EL USUARIO ENVIA EL FORMULARIO
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+        //CREAR UNA NUEVA ISNTANCIA
+        $empresa = new Empresas($_POST['empresas']);
+
+        //GENERAR UN NOMBRE UNICO
+        $nombreImagen = md5( uniqid( rand(), true ) ) . ".jpg";
+
+            if($_FILES['empresas']['tmp_name']['imagen']){
+            //SETEAR LA IMAGEN
+            $image = Image::make($_FILES['empresas']['tmp_name']['imagen'])->fit(800, 600);
+            $empresa->setImagen($nombreImagen);
+            }
+
+            //VALIDAR
             $errores = $empresa->validar();
-    
-            //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
-            if(empty($errores)){  
-            //GUARDAR EN LA BD
-            $empresa->guardar();
+
+            if(empty($errores)){ 
+                
+            //CREAR CARPETA
+            $carpetaImagenes = '../../src/img/'; 
+            if(!is_dir(CARPETA_IMAGENES)){
+                mkdir(CARPETA_IMAGENES);
+            }
+                //GUARDAR LA IMAGEN EN EL SERVIDOR
+                $image->save(CARPETA_IMAGENES . $nombreImagen);
+
+                //GUARDAR EN LA BD
+            $empresa->guardar();     
             }
         }
-       
-        
-        $router->render2('empresa/crear' , [
+        $router->render2('empresas/crear' , [
             'empresa' => $empresa,
             'tipoidentificacion' => $tipoidentificacion,
-            'tipoprogramas' => $tipoprogramas,
             'errores' => $errores
         ]);
     }
-    public static function actualizar(){
-        echo "Actualizar Empresa";
-    }
+    public static function actualizar(Router $router){
+        $id = validarORedireccionar('/admin/admin');
+        $empresa =Empresas::find($id);
+        $tipoidentificacion = Tipoidentificacion::all();
+        $errores = Empresas::getErrores();
+
+        // METODO POST PARA ACTUALIZAR
+        if($_SERVER['REQUEST_METHOD']==='POST'){
+
+            //ASIGNAR LOS ATRIBUTOS
+            $args = $_POST['empresas'];
+
+            $empresa->sincronizar($args);
+            
+            //VALIDACION
+            $errores = $empresa->validar();
+            
+            //GENERAR UN NOMBRE UNICO
+            $nombreImagen = md5( uniqid( rand(), true ) ) . ".jpg";
+
+            //SUBIDA DE ARCHIVOS
+            if($_FILES['empresas']['tmp_name']['imagen']){
+                //SETEAR LA IMAGEN
+                $image = Image::make($_FILES['empresas']['tmp_name']['imagen'])->fit(800, 600);
+                $empresa->setImagen($nombreImagen);
+                }
+
+            //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
+            if(empty($errores)){  //empty es la funcion que reviza los arreglos esten vacios
+                //ALMACENAR LA IMAGEN
+                $empresa->guardar();
+                $image->save(CARPETA_IMAGENES . $nombreImagen);            
+            }
+        }
+
+            $router->render2('/empresas/actualizar', [
+                'empresa' => $empresa,
+                'tipoidentificacion' => $tipoidentificacion,
+                'errores' => $errores
+            ]);
+        }
     public static function consultar(Router $router){
         $empresa = Empresas::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('empresa/consultar' , [
+        $router->render2('empresas/consultar' , [
             'empresa' => $empresa
            
         ]);

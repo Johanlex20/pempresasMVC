@@ -24,7 +24,7 @@ function imagenes (done){
     const opciones = {
         optimizationLevel:3
     }
-    src('src/img/**/*.{png,jpg}')
+    src('/imagenes/**/*.{png,jpg}')
         .pipe( cache( imagemin(opciones) ) )
         .pipe( dest('./public/build/img'))
     done();
@@ -35,7 +35,7 @@ function versionWebp(done){
         quality: 50
     };
 
-    src('src/img/**/*.{png,jpg}')
+    src('/imagenes/**/*.{png,jpg}')
         .pipe( webp(opciones) )
         .pipe( dest('./public/build/img'))
     done();

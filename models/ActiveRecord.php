@@ -66,7 +66,7 @@ class ActiveRecord {
         
         if($resultado){
             echo "Actualizado Correctamente";
-            header('Location: /admin?resultado=2');
+            header('Location: /admin/admin?resultado=2');
         }
     }
 
@@ -81,7 +81,7 @@ class ActiveRecord {
             $this->borrarImagne();
             echo "Eliminado Correctamente";
             //REDIRECCION DE USUARIO PARA EVITAR DUPLICAR DATOS
-            header('location:/admin/?resultado=3');
+            header('location:/admin/admin?resultado=3');
         }    
     }
 

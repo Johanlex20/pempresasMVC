@@ -80,7 +80,7 @@
                                     value="<?php echo s ( $empresa->imagen ); ?>" 
                                     class="input-control">
                                             <?php if ($empresa->imagen) { ?>
-                                                <img src="/src/img/<?php echo $empresa->imagen; ?>" class="imagen-small"> 
+                                                <img src="/imagenes/<?php echo $empresa->imagen; ?>" class="imagen-small"> 
                                             <?php } ?>
                                 </div>
                             </fieldset>

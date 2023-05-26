@@ -1,45 +1,51 @@
- 
 <main class="contenedor seccion">
         <div class="contenedor seccion">
             <div class="contabapren"> 
                 <section id= "tablaAprendiz" class="seccion">
-                    <h1 class="admi-text-home">Consultar aprendiz</h1>
+                    <h1 class="admi-text-home">Consultar Empresa</h1>
                 <!-- TABLA DE CONSULTA INDEX ADMIN-->
                     <table class="aprendiz">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>nombre</th>
+                                <th>Razon Social</th>
                                 <th>identificacion</th>
+                                <th>Logo</th>
                                 <th>email</th>
                                 <th>telefono</th>
+                                <th>Dirección</th>
                                 <th>acciones</th>
                             </tr>
                         </thead>
+
                         <tbody>  <!-- MOSTRAR LOS RESULTADOS -->
-                            <?php foreach( $aprendiz as $aprendi ):?>
+                            <?php foreach( $empresa as $empre ):?>
                             <tr>
-                                <td> <?php echo $aprendi-> id; ?> </td>
-                                <td> <?php echo $aprendi-> nombre; ?> </td>
-                                <td> <?php echo $aprendi-> identificacion; ?></td>
-                                <td> <?php echo $aprendi-> email; ?> </td>
-                                <td> <?php echo $aprendi-> telefono; ?> </td>
+                                <td> <?php echo $empre-> id; ?> </td>
+                                <td> <?php echo $empre-> razonsocial; ?> </td>
+                                <td> <?php echo $empre-> identificacionemp; ?></td>
+                                <td> <img src="/imagenes/<?php echo $empre->imagen; ?>" class="imagen-tabla"> </td>
+                                <td> <?php echo $empre-> emailemp; ?> </td>
+                                <td> <?php echo $empre-> telefonoemp; ?> </td>
+                                <td> <?php echo $empre-> direccionemp; ?> </td>
                                 <td>
-                                <form method="POST" class="w-100" action="/admin/propiedades/consultar.php">
-                                    <input type="hidden" name="id" value="<?php echo $aprendi->id; ?>">
+
+                                <form method="POST" class="w-100" action="/admin/empresas/consultarempre.php" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" value="<?php echo $empre->id; ?>">
                                     <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
-                                    <input type="hidden" name="tipo" value="aprendiz">    
+                                    <input type="hidden" name="id" value="<?php echo $empre->id; ?>">    
                                     <input type="submit" class="boton-rojo-block" value="Eliminar">
                                 <!-- funcion para eliminacion usuarios -->
                                 </form>
-                                <a href="/aprendiz/actualizar?id=<?php echo $aprendi->id; ?>" class="boton-green-block" >Actualizar</a>
-                                </td>                                
+                                <a href="/empresas/actualizar?id=<?php echo $empre->id; ?>" class="boton-green-block" >Actualizar</a>
+                                </td>                
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
                 </section>
             </div>
+
         <!-- boton Volver -->
         <a href="/admin/admin" class="boton-volver"> 
             <span class="texto-fondo">Volver</span>
