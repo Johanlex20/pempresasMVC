@@ -70,4 +70,20 @@ class ProgramaController{
         ]);
     }
 
+    public static function eliminar(Router $router){
+        if ($_SERVER ['REQUEST_METHOD'] === 'POST'){
+            //VALIDAR ID
+            $id = $_POST ['id'];
+            $id = filter_var ($id, FILTER_VALIDATE_INT);
+
+            if($id){
+                $tipo = $_POST['tipo'];
+                if(validarTipoContenido($tipo)){
+                    $programa = programa::find($id);
+                    $programa->eliminar();
+                }  
+            }
+        }
+    }
+
 }

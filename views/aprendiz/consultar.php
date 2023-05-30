@@ -25,9 +25,8 @@
                                 <td> <?php echo $aprendi-> email; ?> </td>
                                 <td> <?php echo $aprendi-> telefono; ?> </td>
                                 <td>
-                                <form method="POST" class="w-100" action="/admin/propiedades/consultar.php">
+                                <form method="POST" class="w-100" action="/aprendiz/eliminar">
                                     <input type="hidden" name="id" value="<?php echo $aprendi->id; ?>">
-                                    <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
                                     <input type="hidden" name="tipo" value="aprendiz">    
                                     <input type="submit" class="boton-rojo-block" value="Eliminar">
                                 <!-- funcion para eliminacion usuarios -->

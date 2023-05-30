@@ -18,7 +18,7 @@
                                     <td> <?php echo $tipot-> id; ?> </td>
                                     <td> <?php echo $tipot-> tipoId; ?> </td>
                                     <td>  
-                                        <form method="POST" class="w-100">
+                                        <form method="POST" class="w-100" action="/tipoidentificacion/eliminar">
                                             <input type="hidden" name="id" value="<?php echo $tipot->id; ?>">
                                                 <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
                                             <input type="hidden" name="tipo" value="tipoidentificacion"> 

@@ -81,7 +81,7 @@ class ActiveRecord {
             $this->borrarImagne();
             echo "Eliminado Correctamente";
             //REDIRECCION DE USUARIO PARA EVITAR DUPLICAR DATOS
-            header('location:/admin/admin?resultado=3');
+            header('Location:/admin/admin?resultado=3');
         }    
     }
 

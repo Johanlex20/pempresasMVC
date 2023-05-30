@@ -30,10 +30,9 @@
                                 <td> <?php echo $empre-> direccionemp; ?> </td>
                                 <td>
 
-                                <form method="POST" class="w-100"  enctype="multipart/form-data">
+                                <form method="POST" class="w-100" action="/empresas/eliminar" enctype="multipart/form-data" >
                                     <input type="hidden" name="id" value="<?php echo $empre->id; ?>">
-                                    <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
-                                    <input type="hidden" name="id" value="<?php echo $empre->id; ?>">    
+                                    <input type="hidden" name="tipo" value= "empresas" >    
                                     <input type="submit" class="boton-rojo-block" value="Eliminar">
                                 <!-- funcion para eliminacion usuarios -->
                                 </form>

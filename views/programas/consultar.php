@@ -18,7 +18,7 @@
                                     <td> <?php echo $tipop-> id; ?> </td>
                                     <td> <?php echo $tipop-> tipoPrograma; ?> </td>
                                     <td>  
-                                        <form method="POST" class="w-100" action="/admin/propiedades/consultar.php">
+                                        <form method="POST" class="w-100" action="/programas/eliminar">
                                             <input type="hidden" name="id" value="<?php echo $tipop->id; ?>">
                                                 <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
                                             <input type="hidden" name="tipo" value="tipoprograma"> 

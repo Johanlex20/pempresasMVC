@@ -30,10 +30,10 @@
                                     <td> <?php echo $ofer-> sueldo; ?> </td>
                                     <td> <?php echo $ofer-> vacantes; ?> </td>
                                     <td>  
-                                        <form method="POST" class="w-100"  enctype="multipart/form-data">
+                                        <form method="POST" class="w-100" action="/ofertas/eliminar" enctype="multipart/form-data" >
                                             <input type="hidden" name="id" value="<?php echo $ofer->id; ?>">
                                                 <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
-                                            <input type="hidden" name="id" value="<?php echo $ofer->id; ?>"> 
+                                            <input type="hidden" name="tipo" value= "ofertas"> 
                                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                                                 <!-- funcion para eliminacion usuarios -->
                                         </form>
