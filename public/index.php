@@ -8,9 +8,11 @@ use Controllers\EmpresaController;
 use Controllers\OfertaController;
 use Controllers\ProgramaController;
 use Controllers\TipoidentificacionController;
+use Controllers\PaginasController;
 
 $router = new Router();
 
+//ZONA PRIVADA
 $router->get('/admin/admin', [AprendizController::class, 'index']);
 
 $router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
@@ -52,5 +54,17 @@ $router->post('/tipoidentificacion/crear', [TipoidentificacionController::class,
 $router->post('/tipoidentificacion/actualizar', [TipoidentificacionController::class, 'actualizar']);
 $router->post('/tipoidentificacion/consultar', [TipoidentificacionController::class, 'consultar']);
 $router->post('/tipoidentificacion/eliminar', [TipoidentificacionController::class, 'eliminar']);
+
+
+//ZONA PUBLICA
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/nosotros', [PaginasController::class, 'nosotros']);
+$router->get('/anuncios', [PaginasController::class, 'anuncios']);
+$router->get('/oferta', [PaginasController::class, 'oferta']);
+$router->get('/eleccion', [PaginasController::class, 'eleccion']);
+$router->get('/login', [PaginasController::class, 'login']);
+$router->get('/recuperar', [PaginasController::class, 'recuperar']);
+$router->get('/contacto', [PaginasController::class, 'contacto']);
+$router->post('/contacto', [PaginasController::class, 'contacto']);
 
 $router->comprobarRutas();

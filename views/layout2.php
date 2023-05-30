@@ -55,13 +55,13 @@
                         <?php  if ($auth): ?>
                             <li><a href="/admin/index.php">Perfil</a></li>
                         <?php endif; ?> 
-                        <li><a href="/anuncios.php">Ofertas</a></li>
+                        <li><a href="/anuncios">Ofertas</a></li>
                         <li><a href="#">hoja de vida</a></li>
-                        <li><a href="#">Contacto</a></li>
-                        <li><a href="/eleccion-registro-modificacion.php">Registro</a></li>
-                        <li><a href="/login.php">Ingreso</a></li>
+                        <li><a href="/nosotros">Contacto</a></li>
+                        <li><a href="/eleccion">Registro</a></li>
+                        <li><a href="/login">Ingreso</a></li>
                         <?php  if ($auth): ?>
-                            <li><a href="/cerrar-sesion.php">Cerrar Sesión</a></li>
+                            <li><a href="/cerrar-sesion">Cerrar Sesión</a></li>
                         <?php endif; ?>    
 
                     </ul>
