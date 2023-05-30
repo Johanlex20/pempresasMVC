@@ -30,7 +30,7 @@
                                 <td> <?php echo $empre-> direccionemp; ?> </td>
                                 <td>
 
-                                <form method="POST" class="w-100" action="/admin/empresas/consultarempre.php" enctype="multipart/form-data">
+                                <form method="POST" class="w-100"  enctype="multipart/form-data">
                                     <input type="hidden" name="id" value="<?php echo $empre->id; ?>">
                                     <!-- funcion para esconder el mensaje de eliminacion a usuarios -->
                                     <input type="hidden" name="id" value="<?php echo $empre->id; ?>">    

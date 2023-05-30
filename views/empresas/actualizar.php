@@ -9,13 +9,10 @@
                             <?php echo $error; ?>
                         </div>
                     <?php endforeach;?> 
-                    <form class="formulario-oferta" method ="POST"  enctype="multipartform-data">
+                    <form class="formulario-oferta" method ="POST"  enctype="multipart/form-data">
                         <?php include __DIR__ . '/formulario_empresas.php'; ?>
                         <button type="submit" class="boton">Actualizar Cuenta</button>
                     </form> 
-                    <div class="clic-boton">
-                        <p>Ya tienes una cuenta <a href="/login.php"class="gradient-text">Iniciar Sesion</a></p>
-                    </div>
                 </div>
         </div>
         <a href="/empresas/consultar" class="boton-volver">  <!--necesita estilos-->

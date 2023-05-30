@@ -9,9 +9,9 @@
                 <ul style="--cantidad-items: 5">
                     <li> <a href="/aprendiz/crear">CREAR APRENDIZ</a> </li>  
                     <li> <a href="/empresas/crear">CREAR EMPRESA</a> </li>  
-                    <li> <a href="/admin/programas/crearprograma.php">CREAR PROGRAMA</a> </li>
-                    <li> <a href="/admin/tipoidentificacion/crearidentificacion.php">CREAR TIPO IDENTIFICACION</a> </li>
-                    <li> <a href="/admin/ofertas/crearoferta.php">CREAR OFERTA</a> </li>
+                    <li> <a href="/programas/crear">CREAR PROGRAMA</a> </li>
+                    <li> <a href="/tipoidentificacion/crear">CREAR TIPO IDENTIFICACION</a> </li>
+                    <li> <a href="/ofertas/crear">CREAR OFERTA</a> </li>
                     
                 </ul>
             </li>
@@ -19,9 +19,9 @@
                 <ul style="--cantidad-items: 5">
                     <li> <a href="/aprendiz/consultar">CONSULTAR APRENDIZ</a> </li> 
                     <li> <a href="/empresas/consultar">CONSULTAR EMPRESA</a> </li>   
-                    <li> <a href="/admin/programas/consultarprograma.php">CONSULTAR PROGRAMA</a> </li>
-                    <li> <a href="/admin/tipoidentificacion/consultaridentificacion.php">CONSULTAR TIPO IDENTIFICACION</a> </li>
-                    <li> <a href="/admin/ofertas/consultaroferta.php">CONSULTAR OFERTAS</a> </li>
+                    <li> <a href="/programas/consultar">CONSULTAR PROGRAMA</a> </li>
+                    <li> <a href="/tipoidentificacion/consultar">CONSULTAR TIPO IDENTIFICACION</a> </li>
+                    <li> <a href="/ofertas/consultar">CONSULTAR OFERTAS</a> </li>
                 </ul>
             </li>    
         </ul>
