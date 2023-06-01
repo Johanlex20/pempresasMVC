@@ -53,15 +53,20 @@
                     <ul>
                         <li><a href="/index.php">HOME</a></li>
                         <?php  if ($auth): ?>
-                            <li><a href="/admin/index.php">Perfil</a></li>
+                            <li><a href="/admin/admin">Perfil</a></li>
                         <?php endif; ?> 
                         <li><a href="/anuncios">Ofertas</a></li>
                         <li><a href="#">hoja de vida</a></li>
                         <li><a href="/nosotros">Contacto</a></li>
-                        <li><a href="/eleccion">Registro</a></li>
-                        <li><a href="/login">Ingreso</a></li>
+                        <!-- <li><a href="/eleccion">Registro</a></li> -->
+                        <?php  if (!$auth): ?>
+                            <li><a href="/eleccion">Registro</a></li>
+                        <?php endif; ?>
+                        <?php  if (!$auth): ?>
+                            <li><a href="/login">Ingreso</a></li>
+                        <?php endif; ?> 
                         <?php  if ($auth): ?>
-                            <li><a href="/cerrar-sesion">Cerrar Sesión</a></li>
+                            <li><a href="/logout">Cerrar Sesión</a></li>
                         <?php endif; ?>    
 
                     </ul>

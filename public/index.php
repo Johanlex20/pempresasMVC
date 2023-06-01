@@ -3,6 +3,7 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controllers\LoginController;
 use Controllers\AprendizController;
 use Controllers\EmpresaController;
 use Controllers\OfertaController;
@@ -55,16 +56,20 @@ $router->post('/tipoidentificacion/actualizar', [TipoidentificacionController::c
 $router->post('/tipoidentificacion/consultar', [TipoidentificacionController::class, 'consultar']);
 $router->post('/tipoidentificacion/eliminar', [TipoidentificacionController::class, 'eliminar']);
 
-
 //ZONA PUBLICA
 $router->get('/', [PaginasController::class, 'index']);
 $router->get('/nosotros', [PaginasController::class, 'nosotros']);
 $router->get('/anuncios', [PaginasController::class, 'anuncios']);
 $router->get('/oferta', [PaginasController::class, 'oferta']);
 $router->get('/eleccion', [PaginasController::class, 'eleccion']);
-$router->get('/login', [PaginasController::class, 'login']);
 $router->get('/recuperar', [PaginasController::class, 'recuperar']);
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
+
+//LOGIN Y AUTENTICACION
+$router->get('/login', [LoginController::class, 'login']);
+$router->post('/login', [LoginController::class, 'login']);
+$router->get('/logout', [LoginController::class, 'logout']);
+$router->get('/registro', [PaginasController::class, 'registro']);
 
 $router->comprobarRutas();

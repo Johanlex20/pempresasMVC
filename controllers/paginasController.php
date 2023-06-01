@@ -22,20 +22,27 @@ class PaginasController{
         $oferta = ofertas::get(4);//este mientras encuentro como mostrar las ofertas en columnas
 
         $router->render2('paginas/anuncios', [
-            'oferta' => $oferta
-            
+            'oferta' => $oferta    
         ]);
     }
-    public static function oferta (){
-        echo "Desde Oferta";
+    public static function oferta ( Router $router){
+
+        $id = validarORedireccionar('/auncios');
+
+        //BUSCAR LA OFERTA POR SU ID
+        $oferta = ofertas::find($id);
+
+        $router->render2 ('paginas/oferta', [
+            'oferta' => $oferta
+        ]);
     }
-    public static function eleccion(){
-        echo "Desde Eleccion Registro";
+    public static function eleccion(Router $router){
+        $router->render2 ('eleccion/eleccion');
     }
     public static function contacto (){
         echo "Desde contacto";
     }
-    public static function login (){
-        echo "Desde Login";
+     public static function recuperar (Router $router){
+        $router->render2('contraseña/recuperar');
     }
 }

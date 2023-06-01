@@ -14,7 +14,7 @@
                         <button type="submit" class="boton">Crear Cuenta</button>
                     </form>
                     <div class="clic-boton">
-                        <p>Ya tienes una cuenta <a href="/login.php"class="gradient-text">Iniciar Sesion</a></p>
+                        <p>Ya tienes una cuenta <a href="/login"class="gradient-text">Iniciar Sesion</a></p>
                     </div>
                 </div>
         </div>

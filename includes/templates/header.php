@@ -59,9 +59,9 @@
                         <li><a href="#">hoja de vida</a></li>
                         <li><a href="#">Contacto</a></li>
                         <li><a href="/eleccion-registro-modificacion.php">Registro</a></li>
-                        <li><a href="/login.php">Ingreso</a></li>
+                        <li><a href="/login">Ingreso</a></li>
                         <?php  if ($auth): ?>
-                            <li><a href="/cerrar-sesion.php">Cerrar Sesión</a></li>
+                            <li><a href="/logout">Cerrar Sesión</a></li>
                         <?php endif; ?>    
 
                     </ul>

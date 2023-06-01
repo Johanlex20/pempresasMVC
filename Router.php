@@ -14,6 +14,21 @@ class Router {
     }
 
     public function comprobarRutas(){
+
+        session_start();
+        $auth = $_SESSION['login'] ?? null;
+
+        //ARREGLO DE RUTAS PROTEGIDAS
+        $rutas_protegidas = [
+            '/admin/admin',
+            '/aprendiz/actualizar','/aprendiz/consultar','/aprendiz/eliminar',
+            '/empresas/actualizar','/empresas/consultar','/empresas/eliminar',
+            '/ofertas/crear','/ofertas/actualizar','/ofertas/consultar','/ofertas/eliminar',
+            '/programas/crear','/programas/actualizar','/programas/consultar','/programas/eliminar',
+            '/tipoidentificacion/crear','/tipoidentificacion/actualizar','/tipoidentificacion/consultar','/tipoidentificacion/eliminar',
+
+        ];
+
         $urlActual = $_SERVER ['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
@@ -21,6 +36,11 @@ class Router {
             $fn = $this->rutasGET [$urlActual] ?? null;
         } else {
             $fn = $this->rutasPOST [$urlActual] ?? null;
+        }
+
+        //PROTEGER LAS RUTAS
+        if(in_array($urlActual, $rutas_protegidas) && !$auth){
+            header('Location:/');
         }
 
         if ($fn){

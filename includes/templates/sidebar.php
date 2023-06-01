@@ -4,7 +4,7 @@
     <nav class="sidebar-nav">
         <ul class="menu-horizontal">
             <li> <a href="/index.php">HOME</a> </li>
-            <li> <a href="/admin">PERFIL</a> </li>
+            <li> <a href="/admin/admin">PERFIL</a> </li>
             <li> <a href="#">CREAR</a>
                 <ul style="--cantidad-items: 5">
                     <li> <a href="/aprendiz/crear">CREAR APRENDIZ</a> </li>  
