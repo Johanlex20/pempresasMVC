@@ -1,7 +1,7 @@
 <main>
-    <div class="contenedor_cajas">
-        <div class="cajas">
-            <div class="caja">
+    <div class="cr">
+        <div class="cajasr">
+            <div class="cajar">
                 <picture>
                     <source srcset="/build/img/logo-aprendiz.webp" type="image/webp">
                     <source srcset="/build/img/logo-aprendiz.png" type="image/png">
@@ -13,11 +13,11 @@
                         </P>
                         <div class="clic-boton">
                             <p>¿No tienes una cuenta?</p> 
-                            <div><a href="/aprendiz/crear"><button type="submit" class="boton">crear cuenta como aprendiz</button></a></div>
+                            <div><a href="/aprendiz/crear"><button type="submit" class="boton">crear cuenta aprendiz</button></a></div>
                         </div>
                     </div>
             </div>
-            <div class="caja">
+            <div class="cajar">
                  <picture>
                     <source srcset="/build/img/logo-Empresa.webp" type="image/webp">
                     <source srcset="/build/img/logo-Empresa.png" type="image/jpeg">
@@ -29,7 +29,7 @@
                         </P>
                         <div class="clic-boton">
                             <p>¿No tienes una cuenta? </p>
-                            <div><a href="/empresas/crear"><button type="submit" class="boton">Crear cuenta como empresa</button></a></div>
+                            <div><a href="/empresas/crear"><button type="submit" class="boton">Crear cuenta empresa</button></a></div>
                         </div>
                 </div>
             </div> 

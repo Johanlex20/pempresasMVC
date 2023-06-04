@@ -477,8 +477,8 @@ html ::-webkit-scrollbar {
 .cuadro .boton {
   height: 45px;
   width: 80%;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 900;
   text-transform: capitalize;
   font-family: inherit;
   cursor: pointer;
@@ -892,17 +892,6 @@ body::after {
   justify-content: space-evenly;
 }
 
-/*.cajas .caja{
-
-    medidas sin rango de las cajas
-    background: var(--green);
-    width: 46%;
-    height: 200px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 30px; 
-    box-shadow: 0 0 6px rgba(0, 0, 0, .6);  sombra alrededor de la caja
-}*/
 /*medidas y alineacion imagen interna de las cajas*/
 .cajas .caja img {
   width: 200px;
@@ -1091,7 +1080,7 @@ body::after {
   }
 }
 /*responsive*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
   .logo img {
     width: 120px;
     display: flex;
@@ -1146,6 +1135,148 @@ body::after {
   }
   .menu #boton_minimenu:hover {
     background: rgba(179, 102, 102, 0.2);
+  }
+}
+/*alineacion horizontal cajas*/
+.cajasr {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/*medidas y alineacion imagen interna de las cajas*/
+.cajasr .cajar img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 6px solid rgb(56, 91, 86);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/*tamaño cajas centro eleccion*/
+.cajasr .cajar {
+  height: 100%;
+  width: 45%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 10px solid hsla(0, 0%, 100%, 0.25);
+  color: hsl(0, 0%, 100%);
+  font-size: 16px;
+}
+
+/*MARCO CAJAS*/
+.cajasr .cajar {
+  border-color: rgb(251, 251, 226);
+  border: 10px solid hsla(0, 0%, 100%, 0.25);
+  padding: 10px 10px;
+  border-radius: 20px;
+  backdrop-filter: blur(30px);
+}
+
+.cajar p {
+  font-weight: 100;
+  padding: 10px, 0px;
+  text-align: center;
+}
+.cajar h4 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.cajasr .cajar .clic-boton {
+  padding-top: 30px;
+  text-align: center;
+}
+
+/* boton aspectos*/
+.cr .boton {
+  height: 45px;
+  width: 80%;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: capitalize;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 25px;
+  user-select: none;
+  background: linear-gradient(to right, rgb(57, 169, 0), rgb(56, 91, 86));
+  border: none;
+  color: hsl(0, 0%, 100%);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.boton ::after {
+  color: hsl(0, 0%, 100%);
+}
+
+.cr .boton::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.5s ease;
+  z-index: -1;
+}
+
+.cr .boton:hover::before {
+  background-color: hsla(0, 0%, 0%, 0.3);
+}
+
+.cr {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+/*responsive*/
+@media screen and (max-width: 992px) {
+  .cajas .caja img {
+    width: 150px;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 768px) {
+  /*medidas y alineacion imagen interna de las cajas*/
+  .cajasr .cajar img {
+    width: 190px;
+    height: 190px;
+  }
+  .cajar h4 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .cajar h4 {
+    font-size: 25px;
+  }
+  .cajasr .cajar img {
+    width: 130px;
+    height: 130px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .cajar h4 {
+    font-size: 20px;
+  }
+  .cajasr .cajar img {
+    width: 100px;
+    height: 100px;
+  }
+  .cr .boton {
+    height: 45px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 700;
   }
 }
 /*tonos de fondo BACKGROUND*/
@@ -1379,16 +1510,16 @@ header {
   justify-content: space-evenly;
 }
 
-.texto-fondo-anuncio {
+.texto-fondo {
   background: linear-gradient(to right, rgb(57, 169, 0), rgb(56, 91, 86));
   color: hsl(0, 0%, 100%);
   border-radius: 50%;
-  padding: 10px 5px;
+  padding: 5px 5px;
   text-align: center;
   height: 45px;
-  width: 40%;
-  font-size: 16px;
-  font-weight: 500;
+  width: 80%;
+  font-size: 20px;
+  font-weight: 900;
   cursor: pointer;
   border-radius: 25px;
   user-select: none;

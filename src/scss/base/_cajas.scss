@@ -8,18 +8,6 @@
     justify-content:space-evenly;
 }
 
-/*.cajas .caja{
-     
-    medidas sin rango de las cajas
-    background: var(--green);
-    width: 46%;
-    height: 200px;
-    align-items: center;
-    justify-content: space-around;
-    border-radius: 30px; 
-    box-shadow: 0 0 6px rgba(0, 0, 0, .6);  sombra alrededor de la caja
-}*/
-
 /*medidas y alineacion imagen interna de las cajas*/
 .cajas .caja img{
     width: 200px;
@@ -33,7 +21,6 @@
     margin-bottom: 10px;
     display: block;
 }
-
 
 /*tamaño cajas centro eleccion*/
 .cajas .caja{
@@ -70,12 +57,10 @@
     border: 10px solid v.$border-color;
     padding: 40px 50px;
     border-radius: 20px;
-    backdrop-filter: v.$blur;
-    
+    backdrop-filter: v.$blur;  
 }
 
 /* boton aspectos*/
-
 .contenedor_cajas .boton{
     height: 45px;
     width: 100%;

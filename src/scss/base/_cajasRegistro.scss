@@ -1,0 +1,162 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+/*alineacion horizontal cajas*/
+
+.cajasr{
+    display:flex;
+    justify-content:space-evenly;
+}
+
+/*medidas y alineacion imagen interna de las cajas*/
+.cajasr .cajar img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 6px solid v.$lead;
+    border-radius : 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    display: block;
+}
+/*tamaño cajas centro eleccion*/
+.cajasr .cajar{
+    height: 100%;
+    width: 45%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 10px solid v.$border-color;
+    color: v.$tex-white;
+    font-size: 16px;
+}
+/*MARCO CAJAS*/
+.cajasr .cajar{
+  
+    border-color: v.$crema;
+    border: 10px solid v.$border-color;
+    padding: 10px 10px;
+    border-radius: 20px;
+    backdrop-filter: v.$blur;
+}
+
+.cajar{
+    p {
+        font-weight: 100;
+        padding: 10px , 0px; 
+        text-align: center;
+        
+    }
+    h4{
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 30px;
+    }
+}
+
+
+.cajasr .cajar .clic-boton{
+    padding-top: 30px;
+    text-align: center;
+}
+
+/* boton aspectos*/
+
+.cr .boton{
+    height: 45px;
+    width: 80%;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: capitalize;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 25px;
+    user-select: none;
+    background: linear-gradient(to right, v.$green, v.$lead);
+    border: none;
+    color: v.$tex-white;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;   
+}
+
+.boton ::after{
+    color: v.$tex-white;
+}
+
+.cr .boton::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%; 
+    transition: background-color 0.5s ease;
+    z-index: -1;
+}
+
+.cr .boton:hover::before{
+    background-color: v.$button-hover-color;
+}
+
+.cr{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+ /*responsive*/
+
+ @media screen and (max-width : 1900px){
+
+}
+@media screen and (max-width : 1200px){
+ 
+}
+@media screen and (max-width : 992px){
+    .cajas .caja img{
+        width: 150px;
+        height: 150px;
+    }
+}
+@media screen and (max-width : 768px) {
+    /*medidas y alineacion imagen interna de las cajas*/
+    .cajasr .cajar img{
+        width: 190px;
+        height: 190px;    
+    } 
+    .cajar h4{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width : 480px) {
+    .cajar h4{
+        font-size: 25px;
+    }
+    .cajasr .cajar img{
+        width: 130px;
+        height: 130px;    
+    } 
+}
+@media screen and (max-width : 320px) {
+    .cajar h4{
+        font-size: 20px;
+    }
+    .cajasr .cajar img{
+        width: 100px;
+        height: 100px;    
+    } 
+    .cr .boton{
+        height: 45px;
+        width: 80%;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
+    
+
+
+
+

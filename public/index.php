@@ -62,7 +62,7 @@ $router->get('/nosotros', [PaginasController::class, 'nosotros']);
 $router->get('/anuncios', [PaginasController::class, 'anuncios']);
 $router->get('/oferta', [PaginasController::class, 'oferta']);
 $router->get('/eleccion', [PaginasController::class, 'eleccion']);
-$router->get('/recuperar', [PaginasController::class, 'recuperar']);
+
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
 
@@ -71,5 +71,11 @@ $router->get('/login', [LoginController::class, 'login']);
 $router->post('/login', [LoginController::class, 'login']);
 $router->get('/logout', [LoginController::class, 'logout']);
 $router->get('/registro', [PaginasController::class, 'registro']);
+
+//RECUPERAR PASSWORD
+$router->get('/recuperar', [LoginController::class, 'recuperar']);
+$router->post('/recuperar', [LoginController::class, 'recuperar']);
+$router->get('/olvide', [LoginController::class, 'olvide']);
+$router->post('/olvide', [LoginController::class, 'olvide']);
 
 $router->comprobarRutas();

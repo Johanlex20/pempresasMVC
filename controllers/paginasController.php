@@ -42,7 +42,5 @@ class PaginasController{
     public static function contacto (){
         echo "Desde contacto";
     }
-     public static function recuperar (Router $router){
-        $router->render2('contraseña/recuperar');
-    }
+
 }

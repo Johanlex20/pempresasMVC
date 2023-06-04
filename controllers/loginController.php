@@ -47,4 +47,14 @@ class LoginController{
 
         header('Location: /');
     }
+
+    public static function olvide(Router $router){
+       echo"Desde olvide";
+    }
+
+    public static function recuperar(Router $router){
+        $router->render2('contraseña/olvide');
+    }
+
+   
 }
