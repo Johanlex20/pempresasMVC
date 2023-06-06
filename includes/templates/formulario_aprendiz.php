@@ -1,5 +1,6 @@
                             <div class="input-box">
-                                <input type="text" 
+                                <input 
+                                type="text" 
                                 id="nombre" 
                                 name="aprendiz[nombre]" 
                                 placeholder="*Nombre usuario Completo" 

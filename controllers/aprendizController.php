@@ -28,15 +28,24 @@ class AprendizController{
             $aprendiz = new aprendiz($_POST['aprendiz']);
             
             $errores = $aprendiz->validar();
+
+            $resultado = $aprendiz->existeUsuario();
+
+            if ($resultado->num_rows){
+                $errores = aprendiz::getErrores();
+            } else{
+                //HASHEAR EL PASSWORD
+                $aprendiz->hashPassword();
+                debuguear($aprendiz);
+            }
     
             //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
-            if(empty($errores)){  
+            if(empty($errores)){ 
+            //VERIFICAR QUE EL USUARIO NO ESTE REGISTRADO
             //GUARDAR EN LA BD
             $aprendiz->guardar();
             }
-        }
-       
-        
+        } 
         $router->render2('aprendiz/crear' , [
             'aprendiz' => $aprendiz,
             'tipoidentificacion' => $tipoidentificacion,

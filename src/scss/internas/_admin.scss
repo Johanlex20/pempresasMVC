@@ -17,8 +17,7 @@
 
     &.exito{
         font-size: 20px;
-        color:v.$color-boton;
-        background-color: v.$tex-white;
+        background: linear-gradient(to right, v.$green, v.$lead);
         max-width: 410px;
         border-radius: 5px;
         margin-bottom: 10px;
