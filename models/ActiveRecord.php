@@ -46,7 +46,7 @@ class ActiveRecord {
 
      //MENSAJE DE EXITO O DE ERROR
      if($resultado){
-        header('Location: /admin/admin?resultado=1'); 
+            header('Location: /mensaje');
         } 
         
     }

@@ -1,5 +1,7 @@
 <?php
 namespace Controllers;
+
+use Classes\Email;
 use MVC\Router;
 use Model\aprendiz;
 use Model\programa;
@@ -21,6 +23,7 @@ class AprendizController{
         $aprendiz = new aprendiz;
         $tipoidentificacion = Tipoidentificacion::all();
         $tipoprogramas = programa::all(); 
+        
         //ARREGLO CON MENSAJES DE ERROR
         $errores = aprendiz::getErrores();
 
@@ -36,14 +39,21 @@ class AprendizController{
             } else{
                 //HASHEAR EL PASSWORD
                 $aprendiz->hashPassword();
-                debuguear($aprendiz);
+
+                //GENERAR UN TOKEN UNICO
+                $aprendiz->crearToken();
+
+                //ENVIAR EL EMAIL
+                $email = new Email($aprendiz->email, $aprendiz->nombre, $aprendiz->token);
+                $email->enviarConfirmacion();
+                // debuguear($aprendiz);
             }
-    
             //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
             if(empty($errores)){ 
             //VERIFICAR QUE EL USUARIO NO ESTE REGISTRADO
             //GUARDAR EN LA BD
-            $aprendiz->guardar();
+            $aprendiz->guardar();  
+    
             }
         } 
         $router->render2('aprendiz/crear' , [
@@ -53,6 +63,10 @@ class AprendizController{
             'errores' => $errores
         ]);
     }
+    public static function mensaje (Router $router){
+        $router->render2('auth/mensaje');
+    }
+
     public static function actualizar(Router $router){
         $id = validarORedireccionar('/admin/admin');
         $aprendiz = aprendiz::find($id);

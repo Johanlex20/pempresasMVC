@@ -29,8 +29,8 @@ class aprendiz extends ActiveRecord{
         $this->password = $args['password'] ?? ''; 
         $this->telefono = $args['telefono'] ?? ''; 
         $this->creacionaprendiz = date('Y/m/d'); 
-        $this->admin = $args ['admin'] ?? null;
-        $this->confirmado = $args ['confirmado'] ?? null;
+        $this->admin = $args ['admin'] ?? '0' ;
+        $this->confirmado = $args ['confirmado'] ?? '0';
         $this->token = $args ['token'] ?? '';
     }
 
@@ -77,9 +77,11 @@ class aprendiz extends ActiveRecord{
         }
         return $resultado;
     }
-
     public function hashPassword(){
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+    }
+    public function crearToken(){
+        $this->token = uniqid();
     }
 
     
