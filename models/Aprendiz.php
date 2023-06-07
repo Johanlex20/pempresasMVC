@@ -27,10 +27,11 @@ class aprendiz extends ActiveRecord{
         $this->tipoPrograma = $args['tipoPrograma'] ?? ''; 
         $this->email = $args['email'] ?? ''; 
         $this->password = $args['password'] ?? ''; 
+        $this->password2 = $args['password2'] ?? null;
         $this->telefono = $args['telefono'] ?? ''; 
         $this->creacionaprendiz = date('Y/m/d'); 
         $this->admin = $args ['admin'] ?? '0' ;
-        $this->confirmado = $args ['confirmado'] ?? '0';
+        $this->confirmado = $args ['confirmado'] ?? 0;
         $this->token = $args ['token'] ?? '';
     }
 
@@ -55,6 +56,9 @@ class aprendiz extends ActiveRecord{
         }
         if (strlen($this->password) < 6){
             self::$errores[] = "* El Password debe contener al menos 6 caracteres";
+        }
+        if (strlen($this->password != $this->password2)){
+            self::$errores[] = "* Las Contraseñas son diferentes";
         }
         if (!$this->telefono){
             self::$errores[] = "* Debes añadir un Telefono";

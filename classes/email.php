@@ -26,8 +26,8 @@ class Email {
         $mail->Username = 'ac560a298d9808';
         $mail->Password = '06bb2d9ef40f9e';
 
-        $mail->setFrom('johanlex20@hotmail.com');
-        $mail->addAddress('johanlex20@hotmail.com','Pempresas.com');
+        $mail->setFrom('EmpleoSenaCME@SENA.com');
+        $mail->addAddress('EmpleoSenaCME@SENA.com','EmpleoSenaCME.com');
         $mail->Subject = 'Confirma tu cuenta';
 
         //SET HTML
@@ -35,8 +35,8 @@ class Email {
         $mail->CharSet = 'UTF-8';
 
         $contenido = "<html>";
-        $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has creado tu cuenta en Pempresas, solo debes confirmarla presionando el siguiente enlace</p>";
-        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar-cuenta?token=" . $this->token ."'>Confirmar Cuenta</a> </p>";
+        $contenido .= "<p><strong>Hola " . $this->nombre . "</strong> Has creado tu cuenta en Empleo SENA CME, solo debes confirmarla presionando el siguiente enlace</p>";
+        $contenido .= "<p>Presiona aquí: <a href='http://localhost:3000/confirmar?token=" . $this->token ."'>Confirmar Cuenta</a> </p>";
         $contenido .= "<p>Si tu no solicitaste esta cuenta, puedes ignorar el menasaje</p>";
         $contenido .= "</html>";
         

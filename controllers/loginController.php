@@ -20,6 +20,7 @@ class LoginController{
                 if(!$resultado){
                     $errores = Admin::getErrores();
                 } else {
+                
                 //VERIFICAR PASSWORD
                 $autenticado = $auth->comprobarPassword($resultado);
 

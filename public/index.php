@@ -79,7 +79,7 @@ $router->get('/olvide', [LoginController::class, 'olvide']);
 $router->post('/olvide', [LoginController::class, 'olvide']);
 
 //CONFIRMAR CUENTA
-$router->get('/confirmar-cuenta', [AprendizController::class,'confirmar']);
+$router->get('/confirmar', [AprendizController::class,'confirmar']);
 $router->get('/mensaje', [AprendizController::class,'mensaje']);
 
 $router->comprobarRutas();

@@ -43,12 +43,10 @@ class ActiveRecord {
 
         $resultado = self::$db->query($query);
         
-
      //MENSAJE DE EXITO O DE ERROR
      if($resultado){
-            header('Location: /mensaje');
+            header('Location: /admin/admin?resultado=1'); 
         } 
-        
     }
 
     public function actualizar(){
@@ -127,7 +125,10 @@ class ActiveRecord {
             }
     }
 
-
+    public static function setAlerta($tipo, $mensaje) {
+        static::$errores [$tipo] [] = $mensaje;
+    }
+  
     //VALIDACION
     public static function getErrores(){
         return static::$errores;
@@ -158,6 +159,12 @@ class ActiveRecord {
     //BUSCA UNA APRENDIZ POR SU ID
     public static function find($id){
         $query ="SELECT * FROM " . static::$tabla . " WHERE id = $id";
+        $resultado = self::consultarSQL($query);
+        return array_shift( $resultado );
+    }
+
+    public static function where($columna, $valor){
+        $query ="SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado );
     }

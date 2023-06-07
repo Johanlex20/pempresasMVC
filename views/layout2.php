@@ -43,7 +43,7 @@
 
         <div class="contenedor_menu">
             <div class="logo">
-                <img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="logo-Sena">
+                <a href="/"><img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="logo-Sena"></a>
             </div>
             <div class="menu">
                 <i class="fa-solid fa-bars" id="boton_minimenu"></i>
@@ -51,7 +51,7 @@
                 <nav id="nav">
                      <!-- <img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="">  -->
                     <ul>
-                        <li><a href="/index.php">HOME</a></li>
+                        <li><a href="/">HOME</a></li>
                         <?php  if ($auth): ?>
                             <li><a href="/admin/admin">Perfil</a></li>
                         <?php endif; ?> 

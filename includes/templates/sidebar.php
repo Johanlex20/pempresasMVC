@@ -1,9 +1,13 @@
 <aside class="sidebar">
+
+            <div class="logo-centrado">
+                <a href="/"><img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="logo-Sena"></a>
+            </div>
     <h2>Admin</h2>
 
     <nav class="sidebar-nav">
         <ul class="menu-horizontal">
-            <li> <a href="/index.php">HOME</a> </li>
+            <li> <a href="/">HOME</a> </li>
             <li> <a href="/admin/admin">PERFIL</a> </li>
             <li> <a href="#">CREAR</a>
                 <ul style="--cantidad-items: 5">

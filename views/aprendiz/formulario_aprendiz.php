@@ -64,6 +64,14 @@
                                 class="input-control">
                             </div>
                             <div class="input-box">
+                                <input type="password" 
+                                id="password2" 
+                                name="aprendiz[password2]" 
+                                placeholder="*Repetir Password" 
+                                value="<?php echo s ($aprendiz->password2);?>"  
+                                class="input-control">
+                            </div>
+                            <div class="input-box">
                                 <input type="number" 
                                 id="telefono" 
                                 name="aprendiz[telefono]" 
