@@ -31,40 +31,40 @@ class aprendiz extends ActiveRecord{
         $this->telefono = $args['telefono'] ?? ''; 
         $this->creacionaprendiz = date('Y/m/d'); 
         $this->admin = $args ['admin'] ?? '0' ;
-        $this->confirmado = $args ['confirmado'] ?? 0;
+        $this->confirmado = $args ['confirmado'] ?? '0';
         $this->token = $args ['token'] ?? '';
     }
 
     public function validar(){
         if (!$this->nombre){
-            self::$errores[] = "* Debes añadir un Nombre";
+            self::$errores['error'][] = "* Debes añadir un Nombre";
         }
         if (!$this->tipoId){
-            self::$errores[] = "* Tipo de Identificacion es obligatorio";
+            self::$errores['error'][] = "* Tipo de Identificacion es obligatorio";
         }
         if (!$this->identificacion){
-            self::$errores[] = "* Debes añadir un Numero de Identificacion";
+            self::$errores['error'][] = "* Debes añadir un Numero de Identificacion";
          }
         if (!$this->tipoPrograma){
-            self::$errores[] = "* Elige un Programa";
+            self::$errores['error'][] = "* Elige un Programa";
         }
         if (!$this->email){
-            self::$errores[] = "* Debes añadir un Correo";
+            self::$errores['error'][] = "* Debes añadir un Correo";
         }
         if (!$this->password){
-            self::$errores[] = "* Debes añadir una Contraseña";
+            self::$errores['error'][] = "* Debes añadir una Contraseña";
         }
         if (strlen($this->password) < 6){
-            self::$errores[] = "* El Password debe contener al menos 6 caracteres";
+            self::$errores['error'][] = "* El Password debe contener al menos 6 caracteres";
         }
         if (strlen($this->password != $this->password2)){
-            self::$errores[] = "* Las Contraseñas son diferentes";
+            self::$errores['error'][] = "* Las Contraseñas son diferentes";
         }
         if (!$this->telefono){
-            self::$errores[] = "* Debes añadir un Telefono";
+            self::$errores['error'][] = "* Debes añadir un Telefono";
         }
         if(!preg_match('/[0-9]{10}/', $this->telefono)){
-            self::$errores[] = "* Formato telefono no Válido";
+            self::$errores['error'][] = "* Formato telefono no Válido";
         }
 
         return self::$errores;
@@ -77,7 +77,7 @@ class aprendiz extends ActiveRecord{
         $resultado = self::$db->query($query);
 
         if($resultado->num_rows){
-            self::$errores [] = " El Usuario ya esta registrado ";
+            self::$errores ['error'] []= " El Usuario ya esta registrado ";
         }
         return $resultado;
     }

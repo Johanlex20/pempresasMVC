@@ -1,44 +1,5 @@
 @use 'base/variables' as v;
 
-//validacion de registro
-
-.alerta{
-    padding: 2px;
-    text-align: center;
-    color: v.$tex-white;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 10px;
-    margin: auto; //estaba 2px pero con esto lo centro
-
-    &.error{
-        background-color: v.$rojo;
-    }
-
-    &.exito{
-        font-size: 20px;
-        background: linear-gradient(to right, v.$green, v.$lead);
-        max-width: 410px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-    &.exito-verde{
-        font-size: 20px;
-        color:v.$tex-white;
-        background: linear-gradient(to right, v.$green, v.$lead);
-        max-width: 410px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-    &.exito-rojo{
-        font-size: 20px;
-        color:v.$tex-white;
-        background: linear-gradient(to right, v.$rojo, v.$lead);
-        max-width: 410px;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-}
 
 
 table.aprendiz {

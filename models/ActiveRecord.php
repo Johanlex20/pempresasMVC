@@ -20,13 +20,14 @@ class ActiveRecord {
     }
 
     
-    public function guardar(){
-        if (!is_null($this->id)){
-            //ACTUALIZAR Registro
-            $this->actualizar();
-        }else{
-            //CREANDO REGISTRO
-            $this->crear();
+    public function guardar()
+    {
+        if (!is_null($this->id)) {
+            // ACTUALIZAR Registro
+            return $this->actualizar();
+        } else {
+            // CREANDO REGISTRO
+            return $this->crear();
         }
     }
 
@@ -45,6 +46,7 @@ class ActiveRecord {
         
      //MENSAJE DE EXITO O DE ERROR
      if($resultado){
+            echo "Creado Correctamente";
             header('Location: /admin/admin?resultado=1'); 
         } 
     }
@@ -64,7 +66,12 @@ class ActiveRecord {
         
         if($resultado){
             echo "Actualizado Correctamente";
-            header('Location: /admin/admin?resultado=2');
+            if(session_start()){
+                header('Location: /admin/admin?resultado=2');
+            }else{
+                header('Location: /?resultado=1');
+            }
+            
         }
     }
 

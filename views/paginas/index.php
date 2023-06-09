@@ -1,8 +1,7 @@
- 
 
- 
 <main class="contenedor_cajas">
-    <h1 class="admi-text-home">PAGINA HOME</h1>
+    <h1 class="admi-text-home">PAGINA HOME</h1>    
+
 
     <section>
     <div class="contenedor_cajas_ofe">

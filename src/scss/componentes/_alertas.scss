@@ -1,0 +1,43 @@
+@use 'base/variables' as v;
+
+//validacion de registro
+.alerta{
+    display: block;
+    margin-bottom: 2px;
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+    color: v.$tex-white;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 12px;
+    
+
+    &.error{
+        background-color: v.$gris;
+    }
+
+    &.exito{
+        font-size: 12px;
+        background: linear-gradient(to right, v.$green, v.$lead);
+        max-width: 410px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    &.exito-verde{
+        font-size: 20px;
+        color:v.$tex-white;
+        background: linear-gradient(to right, v.$green, v.$lead);
+        max-width: 410px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    &.exito-rojo{
+        font-size: 20px;
+        color:v.$tex-white;
+        background: linear-gradient(to right, v.$rojo, v.$lead);
+        max-width: 410px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+}

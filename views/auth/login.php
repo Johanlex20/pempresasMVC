@@ -1,3 +1,4 @@
+
 <main>
     <div class="contenerdor_formulario">
         <div class="formulario">
@@ -12,7 +13,12 @@
 
                 <form method = "POST"  action="/login"> <!-- En el action puedo colocar donde quiero enviar los datos pero si no lo hago lo enviara al mismo archivo -->
                     <div class="input-box">
-                        <input type="email" name="email" placeholder="Email" id="email" class="input-control" > <!-- required es para activar las validaciones de html5 -->
+                        <input 
+                        type="email" 
+                        name="email" 
+                        placeholder="Email" 
+                        id="email" 
+                        class="input-control" > <!-- required es para activar las validaciones de html5 -->
                     </div>
                     <div class="input-box">
                         <input type="password" name="password" placeholder="Password" id="password"  class="input-control" ><!-- required es para activar las validaciones de html5 -->

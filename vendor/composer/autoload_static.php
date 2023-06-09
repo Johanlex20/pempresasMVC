@@ -16,6 +16,10 @@ class ComposerStaticInite0605effc34bd8ad6e4a57875b6f6109
             'Psr\\Http\\Message\\' => 17,
             'PHPMailer\\PHPMailer\\' => 20,
         ),
+        'O' => 
+        array (
+            'OO\\Pempresas\\' => 13,
+        ),
         'M' => 
         array (
             'Model\\' => 6,
@@ -45,6 +49,10 @@ class ComposerStaticInite0605effc34bd8ad6e4a57875b6f6109
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'OO\\Pempresas\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Model\\' => 
         array (

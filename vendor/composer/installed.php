@@ -3,7 +3,7 @@
         'name' => 'o.o/pempresas',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'bad7d88e0ab8e7782ab0c538418127938090c143',
+        'reference' => '19d1d168c8f9ba4baa84d3f4c1648458451dd797',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -31,7 +31,7 @@
         'o.o/pempresas' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'bad7d88e0ab8e7782ab0c538418127938090c143',
+            'reference' => '19d1d168c8f9ba4baa84d3f4c1648458451dd797',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

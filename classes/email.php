@@ -23,8 +23,8 @@ class Email {
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = 'ac560a298d9808';
-        $mail->Password = '06bb2d9ef40f9e';
+        $mail->Username = '2ee2dccb2b476d';
+        $mail->Password = '697d36db74ca43';
 
         $mail->setFrom('EmpleoSenaCME@SENA.com');
         $mail->addAddress('EmpleoSenaCME@SENA.com','EmpleoSenaCME.com');

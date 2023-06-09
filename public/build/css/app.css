@@ -1534,42 +1534,6 @@ header {
   font-size: 40px;
 }
 
-.alerta {
-  padding: 2px;
-  text-align: center;
-  color: hsl(0, 0%, 100%);
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 10px;
-  margin: auto;
-}
-.alerta.error {
-  background-color: rgb(220, 3, 3);
-}
-.alerta.exito {
-  font-size: 20px;
-  background: linear-gradient(to right, rgb(57, 169, 0), rgb(56, 91, 86));
-  max-width: 410px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.alerta.exito-verde {
-  font-size: 20px;
-  color: hsl(0, 0%, 100%);
-  background: linear-gradient(to right, rgb(57, 169, 0), rgb(56, 91, 86));
-  max-width: 410px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-.alerta.exito-rojo {
-  font-size: 20px;
-  color: hsl(0, 0%, 100%);
-  background: linear-gradient(to right, rgb(220, 3, 3), rgb(56, 91, 86));
-  max-width: 410px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
 table.aprendiz {
   margin-top: 1rem;
   width: 100%;
@@ -1713,4 +1677,42 @@ table.aprendiz .imagen-tabla {
 }
 .barra .clic-boton p {
   padding: 0 0;
+}
+
+.alerta {
+  display: block;
+  margin-bottom: 2px;
+  border-radius: 5px;
+  padding: 2px;
+  text-align: center;
+  color: hsl(0, 0%, 100%);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.alerta.error {
+  background-color: hsl(0, 0%, 52%);
+}
+.alerta.exito {
+  font-size: 12px;
+  background: linear-gradient(to right, rgb(57, 169, 0), rgb(56, 91, 86));
+  max-width: 410px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.alerta.exito-verde {
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(to right, rgb(57, 169, 0), rgb(56, 91, 86));
+  max-width: 410px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.alerta.exito-rojo {
+  font-size: 20px;
+  color: hsl(0, 0%, 100%);
+  background: linear-gradient(to right, rgb(220, 3, 3), rgb(56, 91, 86));
+  max-width: 410px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }

@@ -21,11 +21,24 @@ class Router {
         //ARREGLO DE RUTAS PROTEGIDAS
         $rutas_protegidas = [
             '/admin/admin',
-            '/aprendiz/actualizar','/aprendiz/consultar','/aprendiz/eliminar',
-            '/empresas/actualizar','/empresas/consultar','/empresas/eliminar',
-            '/ofertas/crear','/ofertas/actualizar','/ofertas/consultar','/ofertas/eliminar',
-            '/programas/crear','/programas/actualizar','/programas/consultar','/programas/eliminar',
-            '/tipoidentificacion/crear','/tipoidentificacion/actualizar','/tipoidentificacion/consultar','/tipoidentificacion/eliminar',
+            '/aprendiz/actualizar',
+            '/aprendiz/consultar',
+            '/aprendiz/eliminar',
+            '/empresas/actualizar',
+            '/empresas/consultar',
+            '/empresas/eliminar',
+            '/ofertas/crear',
+            '/ofertas/actualizar',
+            '/ofertas/consultar',
+            '/ofertas/eliminar',
+            '/programas/crear',
+            '/programas/actualizar',
+            '/programas/consultar',
+            '/programas/eliminar',
+            '/tipoidentificacion/crear',
+            '/tipoidentificacion/actualizar',
+            '/tipoidentificacion/consultar',
+            '/tipoidentificacion/eliminar',
 
         ];
 
