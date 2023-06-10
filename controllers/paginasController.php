@@ -42,5 +42,8 @@ class PaginasController{
     public static function contacto (){
         echo "Desde contacto";
     }
+    public static function hojadevida (Router $router){
+        $router->render2('paginas/hojadevida');
+    }
 
 }

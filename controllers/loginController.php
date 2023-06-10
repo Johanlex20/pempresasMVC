@@ -50,43 +50,44 @@ class LoginController{
         header('Location: /');
     }
 
-    public static function confirmar (Router $router){
+    public static function confirmar(Router $router)
+    {
         $errores = [];
         
-        $aprendiz = new aprendiz;
-
+        $aprendiz = new Aprendiz;
         $token = s($_GET['token']);
-
-       if(!$token) header('Location: /');
-
-        $aprendiz = aprendiz::where('token', $token);
-
-        if(empty($aprendiz)){
-            aprendiz::setAlerta('error','Token No Válido');         
-        }else{            
-             //MODIFICAR A USUARIO CONFIRMADO
-             $aprendiz->confirmado = "1";
-             $aprendiz->token = null;
-             unset($aprendiz->password2);
+    
+        if (!$token) {
+            header('Location: /');
+        }
+    
+        $aprendiz = Aprendiz::where('token', $token);
+    
+        if (empty($aprendiz)) {
+            Aprendiz::setAlerta('error', 'Token No Válido');
+        } else {
+            // MODIFICAR A USUARIO CONFIRMADO
+            $aprendiz->confirmado = "1";
+            $aprendiz->token = null;
+            unset($aprendiz->password2);
+            
+                 
+            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');
+            
+            if (isset($_POST['confirmar'])) {
+                $aprendiz->guardar();
+            }
+        } 
              
-             aprendiz::setAlerta('exito','Cuenta Comprobada Correctamente');
-
-             $aprendiz->guardar();
-         } 
-          
-         
-         //OBTENER ALERTAS
-        $errores = aprendiz::getErrores();
-        //ENVIO CORREO A LA VISTA CONFIRMADA
-        $router->render2('auth/confirmar',[
-             'errores' => $errores
+        // OBTENER ALERTAS
+        $errores = Aprendiz::getErrores();
+        
+        // ENVIO CORREO A LA VISTA CONFIRMADA
+        $router->render2('auth/confirmar', [
+            'errores' => $errores
         ]);
     }
-
-    // public static function aceptar (Router $router){
-    //     $aprendiz = new aprendiz;
-    //     if($aprendiz->confirmado = "");
-    // }
+    
 
     public static function olvide(Router $router){
         $errores=[];

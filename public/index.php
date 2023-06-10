@@ -62,6 +62,7 @@ $router->get('/nosotros', [PaginasController::class, 'nosotros']);
 $router->get('/anuncios', [PaginasController::class, 'anuncios']);
 $router->get('/oferta', [PaginasController::class, 'oferta']);
 $router->get('/eleccion', [PaginasController::class, 'eleccion']);
+$router->get('/hojadevida', [PaginasController::class, 'hojadevida']);
 
 $router->get('/contacto', [PaginasController::class, 'contacto']);
 $router->post('/contacto', [PaginasController::class, 'contacto']);
@@ -81,5 +82,6 @@ $router->post('/olvide', [LoginController::class, 'olvide']);
 //CONFIRMAR CUENTA
 $router->get('/confirmar', [LoginController::class,'confirmar']);
 $router->get('/mensaje', [LoginController::class,'mensaje']);
+$router->post('/confirmar', [LoginController::class, 'confirmar']);
 
 $router->comprobarRutas();

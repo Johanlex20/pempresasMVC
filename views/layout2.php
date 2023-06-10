@@ -56,7 +56,7 @@
                             <li><a href="/admin/admin">Perfil</a></li>
                         <?php endif; ?> 
                         <li><a href="/anuncios">Ofertas</a></li>
-                        <li><a href="#">hoja de vida</a></li>
+                        <li><a href="/hojadevida">hoja de vida</a></li>
                         <li><a href="/nosotros">Contacto</a></li>
                         <!-- <li><a href="/eleccion">Registro</a></li> -->
                         <?php  if (!$auth): ?>
