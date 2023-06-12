@@ -17,14 +17,19 @@
                         class="input-control" > <!-- required es para activar las validaciones de html5 -->
                     </div>
                     <div class="input-box">
-                        <input type="password" name="password" placeholder="Password" id="password"  class="input-control" ><!-- required es para activar las validaciones de html5 -->
+                        <input 
+                        type="password" 
+                        name="password" 
+                        placeholder="Password" 
+                        id="password"  
+                        class="input-control" ><!-- required es para activar las validaciones de html5 -->
                     </div>
                     <button type="submit" class="boton">Iniciar Sesión</button>
                 </form>
 
                 <div class="clic-boton">
                     <div class="input-link">
-                        <a href="/recuperar" class="gradient-text">Olvido su contraseña</a>
+                        <a href="/olvide" class="gradient-text">Olvido su contraseña</a>
                     </div>
                     <p>¿No tienes una cuenta? <a href="/eleccion" class="gradient-text">Crear cuenta</a></p>
                 </div>

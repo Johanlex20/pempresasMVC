@@ -3,6 +3,7 @@ namespace Controllers;
 use MVC\Router;
 use Model\Admin;
 use Model\aprendiz;
+use Classes\Email;
 
 class LoginController{
     public static function login(Router $router){
@@ -93,16 +94,74 @@ class LoginController{
         $errores=[];
         
        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $auth = new aprendiz($_POST);
+            $errores = $auth->validarEmail();
+            
+            if(empty($errores)){
+                $aprendiz = aprendiz::where('email',$auth->email);
+                if($aprendiz && $aprendiz->confirmado === "1"){
 
+                    //GENERAR UN TOKEN
+                    $aprendiz->crearToken();
+                    $aprendiz->guardar();
+
+                    //ENIVAR EL EMAIL
+                    $email = new Email($aprendiz->email, $aprendiz->nombre, $aprendiz->token);
+                    $email->enviarInstrucciones();
+                    //ALERTA DE EXITO
+                    aprendiz::setAlerta('exito','Revisa tu email');
+                }else{
+                    aprendiz::setAlerta('error','El Usuario no existe o no esta confirmado');
+                }
+            }
+            
        }
-       $router->render2('auth/olvide', [
+       $errores = aprendiz::getErrores();
+       $router->render2('contraseña/olvide', [
             'mensaje'=>'Olvide mi Password',
             'errores'=>$errores
        ]);
     }
 
     public static function recuperar(Router $router){
-        $router->render2('contraseña/olvide');
+        $errores = [];
+        $error = false;
+        $token = s ($_GET['token']);
+
+        // BUSCAR APRENDIZ POR SU TOKEN
+        $aprendiz = aprendiz::where('token', $token);
+
+        if(empty($aprendiz)){
+            aprendiz::setAlerta('error', 'Token No Válido');
+            $error = true;
+        }
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            // LEER EL NUEVO PASSWORD Y GUARDARLO
+
+            $password = new aprendiz($_POST);
+            $errores = $password->validarPassword();
+
+            if(empty($errores)){
+                $aprendiz->password = null;
+                $aprendiz->password = $password->password;
+                $aprendiz->hashPassword();
+                $aprendiz->token = null;
+
+                $resultado = $aprendiz->guardar();
+                // if($resultado){
+                //     header('Location: /');
+                // }
+            }
+
+        }
+
+        // debuguear($aprendiz);
+        
+        $errores = aprendiz::getErrores();
+        $router->render2('contraseña/recuperar',[
+            'errores' => $errores,
+            'error' => $error
+        ]);
     }
 
    

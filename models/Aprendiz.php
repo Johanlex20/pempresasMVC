@@ -82,6 +82,22 @@ class aprendiz extends ActiveRecord{
         return self::$errores;
     }
 
+    public function validarEmail(){
+        if (!$this->email){
+            self::$errores['error'][] = "* Debes añadir un Correo";
+        }
+        return self::$errores;
+    }
+    public function validarPassword(){
+        if(!$this->password){
+            self::$errores['error'][] = 'La Contraseña es obligatoria';
+        }
+        if (strlen($this->password) < 6){
+            self::$errores['error'][] = 'La Contraseña debe tener al menos 6 caracteres';
+        }
+        return self::$errores;
+    }
+
     //REVISA SI EL USUARIO YA EXISTE
     public function existeUsuario(){
         $query = " SELECT * FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1";
