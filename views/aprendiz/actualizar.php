@@ -4,11 +4,10 @@
                 <div class="cuadro">
                     <h3>Actualizar aprendiz</h3>
                    <!-- mensaje de validacion complete los datos -->
-                    <?php foreach($errores as $error): ?>  
-                        <div class="alerta error">
-                            <?php echo $error; ?>
-                        </div>
-                    <?php endforeach;?> 
+                   <?php 
+                        include_once __DIR__ . "/../templates/alertas.php";
+                    ?>
+                    
                      <form class="formulario-aprendiz" method ="POST"> 
                         <?php include __DIR__ . '/formulario_aprendiz.php'; ?>
                         <button type="submit" class="boton">Actualizar Aprendiz</button>

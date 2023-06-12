@@ -5,13 +5,9 @@
             <div class="cuadro">
                 <h3>Plataforma de ingreso</h3>
                     <!-- varificacion de errores al ingresar -->
-                    <?php foreach ($errores as $error): ?>
-                        <div class="alerta error">
-                            <?php echo $error; ?>
-                        </div>
-                    <?php endforeach; ?>
+                    <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
-                <form method = "POST"  action="/login"> <!-- En el action puedo colocar donde quiero enviar los datos pero si no lo hago lo enviara al mismo archivo -->
+                <form method = "POST"  action="/login" novalidate> <!-- novalide falta En el action puedo colocar donde quiero enviar los datos pero si no lo hago lo enviara al mismo archivo -->
                     <div class="input-box">
                         <input 
                         type="email" 

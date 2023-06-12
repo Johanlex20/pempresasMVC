@@ -10,31 +10,39 @@ class LoginController{
         $errores = [];
 
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
-            $auth = new Admin ($_POST);
+            $auth = new aprendiz($_POST);
 
-            $errores = $auth->validar();
-
+            $errores = $auth->validarLogin();
+            
             if(empty($errores)){
                 //VERIFICAR SI EL USUARIO EXISTE
-                $resultado = $auth->existeUsuario();
-
-                if(!$resultado){
-                    $errores = Admin::getErrores();
-                } else {
+                $aprendiz = aprendiz::where('email', $auth->email);
                 
-                //VERIFICAR PASSWORD
-                $autenticado = $auth->comprobarPassword($resultado);
-
-                    if($autenticado){
+                if($aprendiz){
+                    //VERIFICAR EL PASSWORD
+                    if($aprendiz->comprobarPasswordAndVerificado($auth->password)){
                         //AUTENTICAR EL USUARIO
-                        $auth->autenticar();
-                    } else{
-                        //PASSWORD INCORRECTO (mensaje de error)
-                        $errores = Admin::getErrores();
+
+                        //LLENAR EL ARREGLO DE SESSION
+                        $_SESSION['id'] = $aprendiz->id;
+                        $_SESSION['nombre'] = $aprendiz->nombre;
+                        $_SESSION['email'] = $aprendiz->email;
+                        $_SESSION['login'] = true;
+
+                        //REDIRECCIONAMIENTO SI ES USUARIO EMPRESA O ADMIN
+                        if($aprendiz->admin === "1"){
+                            $_SESSION['admin'] = $aprendiz->admin ?? null;
+                            header('Location: /admin/admin');
+                        }else{
+                            header('Location: /login');
+                        }     
                     }
+                }else{
+                    aprendiz::setAlerta('error', 'Usuario No Encontrado');
                 }
             }
         }  
+        $errores = aprendiz::getErrores();
         $router->render2('auth/login',[
             'errores' => $errores
         ]);
@@ -57,10 +65,6 @@ class LoginController{
         $aprendiz = new Aprendiz;
         $token = s($_GET['token']);
     
-        if (!$token) {
-            header('Location: /');
-        }
-    
         $aprendiz = Aprendiz::where('token', $token);
     
         if (empty($aprendiz)) {
@@ -70,13 +74,9 @@ class LoginController{
             $aprendiz->confirmado = "1";
             $aprendiz->token = null;
             unset($aprendiz->password2);
-            
-                 
-            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');
-            
-            if (isset($_POST['confirmar'])) {
-                $aprendiz->guardar();
-            }
+            $aprendiz->guardar();    
+            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');         
+     
         } 
              
         // OBTENER ALERTAS

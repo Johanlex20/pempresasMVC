@@ -30,8 +30,8 @@ class aprendiz extends ActiveRecord{
         $this->password2 = $args['password2'] ?? null;
         $this->telefono = $args['telefono'] ?? ''; 
         $this->creacionaprendiz = date('Y/m/d'); 
-        $this->admin = $args ['admin'] ?? '0' ;
-        $this->confirmado = $args ['confirmado'] ?? '0';
+        $this->admin = $args ['admin'] ?? '' ;
+        $this->confirmado = $args ['confirmado'] ?? '';
         $this->token = $args ['token'] ?? '';
     }
 
@@ -70,6 +70,18 @@ class aprendiz extends ActiveRecord{
         return self::$errores;
     }
 
+    public function validarLogin(){
+        if (!$this->email){
+            self::$errores['error'][] = "* Debes añadir un Correo";
+        }
+
+        if (!$this->password){
+            self::$errores['error'][] = "* Debes añadir una Contraseña";
+        }
+
+        return self::$errores;
+    }
+
     //REVISA SI EL USUARIO YA EXISTE
     public function existeUsuario(){
         $query = " SELECT * FROM " . self::$tabla . " WHERE email = '" . $this->email . "' LIMIT 1";
@@ -77,7 +89,7 @@ class aprendiz extends ActiveRecord{
         $resultado = self::$db->query($query);
 
         if($resultado->num_rows){
-            self::$errores ['error'] []= " El Usuario ya esta registrado ";
+            self::$errores ['error'][]= " El Usuario ya esta registrado ";
         }
         return $resultado;
     }
@@ -88,5 +100,13 @@ class aprendiz extends ActiveRecord{
         $this->token = uniqid();
     }
 
+    public function comprobarPasswordAndVerificado($password){
+        $resultado = password_verify($password, $this->password);
+        if(!$resultado || !$this->confirmado){
+            self::$errores['error'][] = 'Password Incorrecto o tu cuenta no ha sido confirmada';
+        }else{
+            return true;
+        }
+    }
     
 }

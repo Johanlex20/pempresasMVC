@@ -36,7 +36,7 @@ class AprendizController{
             $aprendiz->sincronizar($_POST);   
             $errores = $aprendiz->validar();
 
-            $resultado = $aprendiz->existeUsuario();
+            $resultado = $aprendiz->existeUsuarioApren();
 
             if ($resultado->num_rows){
                 $errores = aprendiz::getErrores();
