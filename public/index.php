@@ -5,6 +5,7 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\LoginController;
 use Controllers\AprendizController;
+use Controllers\CitaController;
 use Controllers\EmpresaController;
 use Controllers\OfertaController;
 use Controllers\ProgramaController;
@@ -55,6 +56,9 @@ $router->post('/tipoidentificacion/crear', [TipoidentificacionController::class,
 $router->post('/tipoidentificacion/actualizar', [TipoidentificacionController::class, 'actualizar']);
 $router->post('/tipoidentificacion/consultar', [TipoidentificacionController::class, 'consultar']);
 $router->post('/tipoidentificacion/eliminar', [TipoidentificacionController::class, 'eliminar']);
+
+//ZONA DE CITAS
+$router->get('/cita',[CitaController::class, 'index']);
 
 //ZONA PUBLICA
 $router->get('/', [PaginasController::class, 'index']);

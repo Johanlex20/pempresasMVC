@@ -9,7 +9,6 @@ class LoginController{
     public static function login(Router $router){
 
         $errores = [];
-
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $auth = new aprendiz($_POST);
 
@@ -48,7 +47,6 @@ class LoginController{
             'errores' => $errores
         ]);
     }
-
     public static function mensaje (Router $router){
         $router->render2('auth/mensaje');
     }
@@ -58,9 +56,7 @@ class LoginController{
 
         header('Location: /');
     }
-
-    public static function confirmar(Router $router)
-    {
+    public static function confirmar(Router $router){
         $errores = [];
         
         $aprendiz = new Aprendiz;
@@ -76,20 +72,15 @@ class LoginController{
             $aprendiz->token = null;
             unset($aprendiz->password2);
             $aprendiz->guardar();    
-            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');         
-     
-        } 
-             
+            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');             
+        }            
         // OBTENER ALERTAS
-        $errores = Aprendiz::getErrores();
-        
+        $errores = Aprendiz::getErrores();      
         // ENVIO CORREO A LA VISTA CONFIRMADA
         $router->render2('auth/confirmar', [
             'errores' => $errores
         ]);
     }
-    
-
     public static function olvide(Router $router){
         $errores=[];
         
@@ -113,8 +104,7 @@ class LoginController{
                 }else{
                     aprendiz::setAlerta('error','El Usuario no existe o no esta confirmado');
                 }
-            }
-            
+            }          
        }
        $errores = aprendiz::getErrores();
        $router->render2('contraseña/olvide', [
@@ -152,17 +142,11 @@ class LoginController{
                 //     header('Location: /');
                 // }
             }
-
         }
-
-        // debuguear($aprendiz);
-        
         $errores = aprendiz::getErrores();
         $router->render2('contraseña/recuperar',[
             'errores' => $errores,
             'error' => $error
         ]);
-    }
-
-   
+    } 
 }
