@@ -67,7 +67,7 @@ class AprendizController{
                 }
             }
         } 
-        $router->render2('aprendiz/crear' , [
+        $router->render('aprendiz/crear' , [
             'aprendiz' => $aprendiz,
             'tipoidentificacion' => $tipoidentificacion,
             'tipoprogramas' => $tipoprogramas,
@@ -98,7 +98,7 @@ class AprendizController{
             $aprendiz->guardar();      
         }
     }
-        $router->render2('/aprendiz/actualizar', [
+        $router->render('/aprendiz/actualizar', [
             'aprendiz' => $aprendiz,
             'tipoidentificacion' => $tipoidentificacion,
             'tipoprogramas' => $tipoprogramas,
@@ -110,7 +110,7 @@ class AprendizController{
         $aprendiz = aprendiz::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('aprendiz/consultar' , [
+        $router->render('aprendiz/consultar' , [
             'aprendiz' => $aprendiz
            
         ]);

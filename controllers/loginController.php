@@ -32,10 +32,12 @@ class LoginController{
                         //REDIRECCIONAMIENTO SI ES USUARIO EMPRESA O ADMIN
                         if($aprendiz->admin === "1"){
                             $_SESSION['admin'] = $aprendiz->admin ?? null;
-                            header('Location: /admin/admin');
-                        }else{
-                            header('Location: /login');
-                        }     
+                            header('Location: /perfil/admin');
+                        }elseif($aprendiz->admin === "2"){
+                            header('Location: /perfil/admin/empresa');
+                        } else{
+                            header('Location: /perfil/admin/aprendiz');
+                        }   
                     }
                 }else{
                     aprendiz::setAlerta('error', 'Usuario No Encontrado');
@@ -43,12 +45,12 @@ class LoginController{
             }
         }  
         $errores = aprendiz::getErrores();
-        $router->render2('auth/login',[
+        $router->render('auth/login',[
             'errores' => $errores
         ]);
     }
     public static function mensaje (Router $router){
-        $router->render2('auth/mensaje');
+        $router->render('auth/mensaje');
     }
     public static function logout(){
         session_start();
@@ -77,7 +79,7 @@ class LoginController{
         // OBTENER ALERTAS
         $errores = Aprendiz::getErrores();      
         // ENVIO CORREO A LA VISTA CONFIRMADA
-        $router->render2('auth/confirmar', [
+        $router->render('auth/confirmar', [
             'errores' => $errores
         ]);
     }
@@ -107,7 +109,7 @@ class LoginController{
             }          
        }
        $errores = aprendiz::getErrores();
-       $router->render2('contraseña/olvide', [
+       $router->render('contraseña/olvide', [
             'mensaje'=>'Olvide mi Password',
             'errores'=>$errores
        ]);
@@ -144,7 +146,7 @@ class LoginController{
             }
         }
         $errores = aprendiz::getErrores();
-        $router->render2('contraseña/recuperar',[
+        $router->render('contraseña/recuperar',[
             'errores' => $errores,
             'error' => $error
         ]);

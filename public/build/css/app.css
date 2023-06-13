@@ -1570,6 +1570,37 @@ table.aprendiz .imagen-tabla {
   background-color: hsl(0, 0%, 100%);
 }
 @media (min-width: 768px) {
+  .dashboard__contenedor-boton {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.dashboard__boton {
+  background-color: rgb(57, 169, 0);
+  padding: 1.5rem 4rem;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.dashboard__boton:hover {
+  background-color: #287600;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dashboard__boton {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
   .dashboard {
     display: flex;
     height: 100vh;
@@ -1581,7 +1612,7 @@ table.aprendiz .imagen-tabla {
 
 .sidebar {
   background-color: hsl(0, 0%, 52%);
-  width: 400px;
+  width: 300px;
   padding: 1rem;
 }
 .sidebar h2 {
@@ -1598,13 +1629,16 @@ table.aprendiz .imagen-tabla {
   margin-bottom: 1rem;
   padding: 0.7rem;
   transition-property: backgroud-color;
-  transition-duration: 300ms;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
   font-weight: bold;
   font-size: 1.2rem;
 }
 .sidebar .sidebar-nav a:hover {
   background: linear-gradient(to right, rgb(56, 91, 86), rgb(57, 169, 0));
   border-radius: 0.5rem;
+}
+.sidebar .dashboard__icono {
+  font-size: 2rem;
 }
 .sidebar nav ul {
   margin: 0;
@@ -1632,7 +1666,7 @@ table.aprendiz .imagen-tabla {
   height: calc(var(--cantidad-items) * var(--cada-item));
 }
 .sidebar nav ul ul a {
-  background: linear-gradient(to right, rgb(56, 91, 86), rgb(57, 169, 0));
+  background: linear-gradient(to right, rgb(56, 91, 86), rgb(44, 43, 43));
 }
 .sidebar .logo-centrado img {
   width: 150px;
@@ -1645,7 +1679,7 @@ table.aprendiz .imagen-tabla {
 }
 
 .barra {
-  background-color: rgb(57, 169, 0);
+  background-color: rgb(44, 43, 43);
   padding: 1rem 2rem;
   box-shadow: -10px 20px 15px -15px rgba(0, 0, 0, 0.4);
   /*efecto cambia tono enlaces*/
@@ -1672,7 +1706,7 @@ table.aprendiz .imagen-tabla {
   text-decoration: none;
 }
 .barra .clic-boton a:hover {
-  color: rgb(56, 91, 86);
+  color: greenyellow;
   transition: all 0.3s;
 }
 .barra .clic-boton p {
@@ -1812,4 +1846,91 @@ h4 {
   width: 1150px;
   margin-top: 80px;
   text-align: justify;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+.formulario__fieldset {
+  border: none;
+  margin-top: 1rem;
+  padding: 0;
+}
+.formulario__legend {
+  color: hsl(0, 0%, 52%);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+.formulario__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.formulario__contenedor-icono {
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.formulario__icono {
+  background-color: rgb(44, 43, 43);
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formulario__icono i {
+  color: hsl(0, 0%, 100%);
+  font-size: 2rem;
+}
+.formulario__label {
+  display: block;
+  font-size: 1.8rem;
+  color: rgba(0, 0, 0, 0.8);
+}
+.formulario__input, .formulario__input--sociales, .formulario__select--sociales, .formulario__select {
+  padding: 1rem;
+  border: 1px solid #8c8b8b;
+  border-radius: 0.5rem;
+}
+.formulario__input--file, .formulario__select--file {
+  border: none;
+}
+.formulario__input--sociales, .formulario__select--sociales {
+  flex: 1;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.formulario__radio {
+  display: flex;
+  gap: 2rem;
+}
+.formulario__texto {
+  margin-top: 3rem;
+}
+.formulario__imagen {
+  max-width: 20rem;
+}
+.formulario__submit {
+  background-color: blue;
+  padding: 1.5rem 4rem;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  width: auto;
+  align-self: flex-start;
+}
+.formulario__submit:hover {
+  background-color: #0000cc;
+  cursor: pointer;
+}
+.formulario__submit--registrar, .formulario__submit--full {
+  width: 100%;
 }

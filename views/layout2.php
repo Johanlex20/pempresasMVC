@@ -45,9 +45,9 @@
             <div class="logo">
                 <a href="/"><img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="logo-Sena"></a>
             </div>
-            <div class="menu">
-                <i class="fa-solid fa-bars" id="boton_minimenu"></i>
-                <div id="mini_menu"></div>
+                    <div class="menu">
+                        <i class="fa-solid fa-bars" id="boton_minimenu"></i>
+                    <div id="mini_menu"></div>
                 <nav id="nav">
                      <!-- <img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="">  -->
                     <ul>

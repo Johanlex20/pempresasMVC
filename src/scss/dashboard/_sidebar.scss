@@ -3,7 +3,7 @@
 
 .sidebar{
    background-color: v.$gris; 
-   width: 400px;
+   width: 300px;
    padding: 1rem;
    h2{  //estilos para el titulo admi patantalla perfil admi barra
     margin: 0;
@@ -19,7 +19,7 @@
         margin-bottom: 1rem;
         padding: .7rem;
         transition-property: backgroud-color;
-        transition-duration: 300ms;
+        transition: 300ms background-color ease-in-out, 300ms color ease;
         font-weight: bold ;
         font-size: 1.2rem;
 
@@ -28,6 +28,10 @@
             border-radius: .5rem;
         }
     }
+
+   }
+   .dashboard__icono{
+    font-size: 2rem;
    }
 
    nav ul{
@@ -64,7 +68,7 @@
    }
 
    nav ul ul a{
-    background: linear-gradient(to right, v.$lead, v.$green);
+    background: linear-gradient(to right, v.$lead, v.$gris-oscuro);
     
    }
    .logo-centrado img{

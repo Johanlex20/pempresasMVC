@@ -52,7 +52,7 @@ class OfertaController{
                $oferta->guardar();     
             }
         }
-        $router->render2('ofertas/crear' , [
+        $router->render('ofertas/crear' , [
             'oferta' => $oferta,
             'tipoprogramas' => $tipoprogramas,
             'errores' => $errores
@@ -93,7 +93,7 @@ class OfertaController{
             }
         }
 
-            $router->render2('/ofertas/actualizar', [
+            $router->render('/ofertas/actualizar', [
                 'oferta' => $oferta,
                 'tipoprogramas' => $tipoprogramas,
                 'errores' => $errores
@@ -103,7 +103,7 @@ class OfertaController{
         $oferta = ofertas::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('ofertas/consultar' , [
+        $router->render('ofertas/consultar' , [
             'oferta' => $oferta          
         ]);
     } 

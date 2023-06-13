@@ -6,6 +6,7 @@ use MVC\Router;
 use Controllers\LoginController;
 use Controllers\AprendizController;
 use Controllers\CitaController;
+use Controllers\PerfilController;
 use Controllers\EmpresaController;
 use Controllers\OfertaController;
 use Controllers\ProgramaController;
@@ -14,9 +15,11 @@ use Controllers\PaginasController;
 
 $router = new Router();
 
+//ZONA ADMI
+$router->get('/perfil/admin', [PerfilController::class, 'indexA']);
+$router->get('/perfil/aprendiz', [PerfilController::class, 'indexZ']);
+$router->get('/perfil/empresa', [PerfilController::class, 'indexE']);
 //ZONA PRIVADA
-$router->get('/admin/admin', [AprendizController::class, 'index']);
-
 $router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
 $router->get('/aprendiz/actualizar', [AprendizController::class, 'actualizar']);
 $router->get('/aprendiz/consultar', [AprendizController::class, 'consultar']);
