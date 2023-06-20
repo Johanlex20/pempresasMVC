@@ -1,4 +1,4 @@
-                <div class="cajas_ofe"> 
+             <div class="cajas_ofe"> 
                     <?php  foreach($oferta as $ofer) { ?>
                         <div class="caja_ofe">
 

@@ -1,14 +1,14 @@
 <?php
-    use App\ofertas;
+    use Model\ofertas;
     
     if($_SERVER['SCRIPT_NAME'] === '/anuncios.php'){
         $oferta = ofertas::all();
     } else {
         // utiliza metodo get y muestra 4 oferta en home
-        $oferta = ofertas::get(4);
+        $oferta = ofertas::get(8);
     }
 ?>  
-                <div class="cajas_ofe"> 
+                <!-- <div class="cajas_ofe"> 
                     <?php  foreach($oferta as $ofer) { ?>
                         <div class="caja_ofe">
 
@@ -35,7 +35,7 @@
                             <a href="/oferta.php?id=<?php echo $ofer->id; ?>" class="boton-volver">
                                 <span class="texto-fondo">Ver Oferta</span>
                             </a> 
-                        </div><!-- CONTINIDO ANUNCIO--> 
-                    <?php } ?>
-                </div>  <!-- ANUNCIO --> 
+                        </div>CONTINIDO ANUNCIO  -->
+                    <!-- <?php } ?>
+                </div>  ANUNCIO  -->
                 

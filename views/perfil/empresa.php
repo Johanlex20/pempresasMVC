@@ -1,1 +1,2 @@
 <h1 class="admi-text"><?php echo $titulo; ?></h1>
+

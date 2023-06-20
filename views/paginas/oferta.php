@@ -1,8 +1,6 @@
-
-
 <section>
     <div class="conte_cajas_ofe">
-        <h2> OFERTA LABORAL1</h2>
+        <h2> OFERTA LABORAL</h2>
             <div class="cajas_ofe">
                 <div class="caja_ofe_only">
                     <img loading="lazy" src="/imagenes/<?php echo $oferta->imagen; ?>" alt="anuncio">
@@ -23,8 +21,9 @@
                             <p>311010000</p>
                         </div>      
                     </div>
-                        <h3>Sobre la oferta</h3>
+                        <h3>Sobre la oferta </h3>
                         <p><?php echo $oferta->descriempleo; ?></p>
+                        
                         <a href="/aplicar?id=<?php echo urlencode($oferta->id) ; ?>" class="boton-volver">
                             <span class="texto-fondo">APLICAR</span>
                         </a> 

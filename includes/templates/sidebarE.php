@@ -21,7 +21,13 @@
                     <li> <a href="/aprendiz/consultar">CONSULTAR APRENDIZ</a> </li>  
                     <li> <a href="/ofertas/consultar">CONSULTAR OFERTAS</a> </li>
                 </ul>
-            </li>    
+            </li>  
+            <li> <a href="#"><i class="fa-solid fa-check-to-slot dashboard__icono"></i>        APLICACIONES</a>
+                <ul style="--cantidad-items: 2">
+                    <li> <a href="/aplicar/consultar">VER APLICACIONES</a> </li>   
+            </li>  
         </ul>
     </nav>
 </aside>
+
+

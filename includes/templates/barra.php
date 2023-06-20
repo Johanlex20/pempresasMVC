@@ -13,12 +13,13 @@
 ?>
 
 <div class="barra">
-     <p>BIENVENIDO </p> <!--pendiente revizar la variable para poner el nombre de usuario al ingreso de perfil -->
+     <p>BIENVENIDO : <span><?php echo $_SESSION['nombre'];?></span></p> <!--pendiente revizar la variable para poner el nombre de usuario al ingreso de perfil -->
     
     <?php  if ($auth): ?>
-        <div class="clic-boton">
-            <a href="/logout" >Cerrar Sesión</a>
+        <div class="logo-centrado">
+        <a href="/logout"><i class="fa-solid fa-power-off"></i></a>
         </div>
     <?php endif; ?>
 </div>
+
 

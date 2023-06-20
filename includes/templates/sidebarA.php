@@ -10,17 +10,25 @@
         <ul class="menu-horizontal">
             <li> <a href="/"><i class="fa-solid fa-house dashboard__icono"></i> HOME</a> </li>
             <li> <a href="/perfil/aprendiz"><i class="fa-solid fa-user dashboard__icono"></i> PERFIL</a> </li>
-            <li> <a href="#"><i class="fa-solid fa-pencil dashboard__icono"></i> CREAR</a>
-                <ul style="--cantidad-items: 1">
-                    <li> <a href="/perfil/aprendiz">EDITAR PERFIL</a> </li>    
-                </ul>
-            </li>
-            <li> <a href="#"><i class="fa-solid fa-magnifying-glass dashboard__icono"></i> CONSULTAR</a>
+                <li> <a href="#"><i class="fa-solid fa-pencil dashboard__icono"></i> CREAR</a>
+                    <ul style="--cantidad-items: 1">
+                        <li> <a href="/perfil/aprendiz">EDITAR PERFIL</a> </li>    
+                    </ul>
+                </li>
+            <li> <a href="#"><i class="fa-solid fa-magnifying-glass dashboard__icono"></i>        CONSULTAR</a>
                 <ul style="--cantidad-items: 2">
-                    <li> <a href="/empresas/consultar">CONSULTAR EMPRESA</a> </li>   </li>
+                    <li> <a href="/empresas/consultar">CONSULTAR EMPRESA</a> </li>   
+            </li>
                     <li> <a href="/ofertas/consultar">CONSULTAR OFERTAS</a> </li>
                 </ul>
             </li>    
+            <li> <a href="#"><i class="fa-solid fa-check-to-slot dashboard__icono"></i>        APLICACIONES</a>
+                <ul style="--cantidad-items: 2">
+                    <li> <a href="/aplicar/consultar">VER APLICACIONES</a> </li>   
+            </li>
+                </ul>
+            </li> 
         </ul>
     </nav>
 </aside>
+

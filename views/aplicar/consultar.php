@@ -3,7 +3,7 @@
         <div class="contenedor seccion">
             <div class="contabapren"> 
                 <section id= "tablaAprendiz" class="seccion">
-                    <h1 class="admi-text-home">Consultar aprendiz</h1>
+                    <h1 class="admi-text-home">Consultar aplicaciones</h1>
                 <!-- TABLA DE CONSULTA INDEX ADMIN-->
                     <table class="aprendiz">
                         <thead>
@@ -12,7 +12,7 @@
                                 <th>hora</th>
                                 <th>fecha</th>
                                 <th>aprendizId</th>
-                                <th>empresasId</th>
+                                <!-- <th>empresasId</th> -->
                                 <th>ofertasId</th>
                             </tr>
                         </thead>
@@ -23,7 +23,7 @@
                                 <td> <?php echo $apli-> hora; ?> </td>
                                 <td> <?php echo $apli-> fecha; ?></td>
                                 <td> <?php echo $apli-> aprendizId; ?> </td>
-                                <td> <?php echo $apli-> empresasId; ?> </td>
+                                <!-- <td> <?php echo $apli-> empresasId; ?> </td> -->
                                 <td> <?php echo $apli-> ofertasId; ?> </td>
                                
                             </tr>
