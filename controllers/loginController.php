@@ -31,6 +31,7 @@ class LoginController{
                         $_SESSION['Idrol'] = $aprendiz->Idrol;
 
                         //REDIRECCIONAMIENTO SI ES USUARIO EMPRESA O ADMIN
+
                         if($aprendiz->Idrol === "1"){
                             $_SESSION['admin'] = $aprendiz->Idrol ?? null;
                             header('Location: /perfil/admin');

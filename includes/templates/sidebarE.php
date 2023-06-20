@@ -3,6 +3,7 @@
             <div class="logo-centrado">
                 <a href="/"><img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="logo-Sena"></a>
             </div>
+
     <h2>Empresa</h2>
 
     <nav class="sidebar-nav">

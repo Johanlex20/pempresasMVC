@@ -48,6 +48,9 @@ class ActiveRecord {
      if($resultado){
             echo "Creado Correctamente";
             header('Location: /perfil/aprendiz?resultado=1'); 
+
+            header('Location: /perfil/admin?resultado=1'); 
+
         } 
     }
 
@@ -67,7 +70,11 @@ class ActiveRecord {
         if($resultado){
             echo "Actualizado Correctamente";
             if(session_start()){
+
                 header('Location: /?resultado=2');
+
+                header('Location: /perfil/admin?resultado=2');
+
             }else{
                 header('Location: /?resultado=1');
             }
@@ -86,7 +93,7 @@ class ActiveRecord {
             $this->borrarImagne();
             echo "Eliminado Correctamente";
             //REDIRECCION DE USUARIO PARA EVITAR DUPLICAR DATOS
-            header('Location:/admin/admin?resultado=3');
+            header('Location:/perfil/admin?resultado=3');
         }    
     }
 

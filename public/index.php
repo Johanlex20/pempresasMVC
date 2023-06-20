@@ -5,12 +5,12 @@ require_once __DIR__ . '/../includes/app.php';
 use MVC\Router;
 use Controllers\LoginController;
 use Controllers\AprendizController;
+use Controllers\PerfilController;
 use Controllers\EmpresaController;
 use Controllers\OfertaController;
 use Controllers\ProgramaController;
 use Controllers\TipoidentificacionController;
 use Controllers\PaginasController;
-use Controllers\PerfilController;
 use Controllers\AplicarController;
 
 $router = new Router();
@@ -25,6 +25,8 @@ $router->post('/aplicar/consultar', [AplicarController::class, 'consultar']);
 $router->get('/perfil/admin', [PerfilController::class, 'indexA']);
 $router->get('/perfil/aprendiz', [PerfilController::class, 'indexZ']);
 $router->get('/perfil/empresa', [PerfilController::class, 'indexE']);
+
+//ZONA PRIVADA
 
 $router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
 $router->get('/aprendiz/actualizar', [AprendizController::class, 'actualizar']);
@@ -65,6 +67,9 @@ $router->post('/tipoidentificacion/crear', [TipoidentificacionController::class,
 $router->post('/tipoidentificacion/actualizar', [TipoidentificacionController::class, 'actualizar']);
 $router->post('/tipoidentificacion/consultar', [TipoidentificacionController::class, 'consultar']);
 $router->post('/tipoidentificacion/eliminar', [TipoidentificacionController::class, 'eliminar']);
+
+//ZONA DE CITAS
+$router->get('/cita',[CitaController::class, 'index']);
 
 //ZONA PUBLICA
 $router->get('/', [PaginasController::class, 'index']);

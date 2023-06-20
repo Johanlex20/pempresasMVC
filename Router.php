@@ -75,6 +75,7 @@ class Router {
         include __DIR__ . "/views/$view.php";
         $contenido = ob_get_clean(); // Limpia el buffer o lo que esta en memoria
 
+
         //UTILIZAR EL LAYOUT DE ACUERDO AL URL
         $urlActual = strtok($_SERVER["REQUEST_URI"], '?') ?? '/';
         if(str_contains($urlActual, '/perfil/admin')){
@@ -87,4 +88,5 @@ class Router {
             include __DIR__ . "/views/layout2.php";
         }
     }
+    
 }

@@ -33,11 +33,14 @@ class PaginasController{
         $oferta = ofertas::find($id);
 
         $router->render ('paginas/oferta', [
+
             'oferta' => $oferta
         ]);
     }
     public static function eleccion(Router $router){
+
         $router->render ('eleccion/eleccion');
+
     }
     public static function contacto (){
         echo "Desde contacto";

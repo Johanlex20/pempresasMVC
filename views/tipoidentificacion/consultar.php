@@ -35,7 +35,7 @@
             </div>
         </div>
         <!-- boton Volver -->
-        <a href="/admin/admin" class="boton-volver"> 
+        <a href="/perfil/admin" class="boton-volver"> 
             <span class="texto-fondo">Volver</span>
         </a>
     </main> 
