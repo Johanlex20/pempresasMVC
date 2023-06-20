@@ -45,7 +45,7 @@ class AplicarController{
             // debuguear($aprendizId); BUSQUEDA DEL ID DEL APRENDIZ
 
             // debuguear($aplicar);
-            // debuguear($errores)fdfdfdfd;
+            // debuguear($errores);
 
             if(empty($errores)){
                 $aplicar->guardar();
