@@ -9,7 +9,7 @@ class PaginasController{
 
         $oferta = ofertas::get(4);
 
-        $router->render2('paginas/index', [
+        $router->render('paginas/index', [
             'oferta' => $oferta
         ]);
     }
@@ -21,7 +21,7 @@ class PaginasController{
         $oferta = ofertas::all();
         $oferta = ofertas::get(4);//este mientras encuentro como mostrar las ofertas en columnas
 
-        $router->render2('paginas/anuncios', [
+        $router->render('paginas/anuncios', [
             'oferta' => $oferta    
         ]);
     }
@@ -32,18 +32,18 @@ class PaginasController{
         //BUSCAR LA OFERTA POR SU ID
         $oferta = ofertas::find($id);
 
-        $router->render2 ('paginas/oferta', [
+        $router->render ('paginas/oferta', [
             'oferta' => $oferta
         ]);
     }
     public static function eleccion(Router $router){
-        $router->render2 ('eleccion/eleccion');
+        $router->render ('eleccion/eleccion');
     }
     public static function contacto (){
         echo "Desde contacto";
     }
     public static function hojadevida (Router $router){
-        $router->render2('paginas/hojadevida');
+        $router->render('paginas/hojadevida');
     }
 
 }

@@ -56,7 +56,7 @@ class EmpresaController{
             $empresa->guardar();     
             }
         }
-        $router->render2('empresas/crear' , [
+        $router->render('empresas/crear' , [
             'empresa' => $empresa,
             'tipoidentificacion' => $tipoidentificacion,
             'errores' => $errores
@@ -97,7 +97,7 @@ class EmpresaController{
             }
         }
 
-            $router->render2('/empresas/actualizar', [
+            $router->render('/empresas/actualizar', [
                 'empresa' => $empresa,
                 'tipoidentificacion' => $tipoidentificacion,
                 'errores' => $errores
@@ -107,7 +107,7 @@ class EmpresaController{
         $empresa = Empresas::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('empresas/consultar' , [
+        $router->render('empresas/consultar' , [
             'empresa' => $empresa
            
         ]);

@@ -9,7 +9,7 @@ class ProgramaController{
         $programa = programa::all();
         $resultado = $_GET ['resultado'] ?? null; //envia el mensaje de creacion de usuario
 
-        $router->render('admin/admin', [
+        $router->render('perfil/admin', [
             'programa' => $programa,
             'resultado' => $resultado
         ]);
@@ -28,13 +28,13 @@ class ProgramaController{
             $programa->guardar();
             }
         }   
-        $router->render2('programas/crear' , [
+        $router->render('programas/crear' , [
             'programa' => $programa,
             'errores' => $errores
         ]);
     }
     public static function actualizar(Router $router){
-        $id = validarORedireccionar('/admin/admin');
+        $id = validarORedireccionar('/perfil/admin');
         $programa = programa::find($id);
         $errores = programa::getErrores();
 
@@ -54,7 +54,7 @@ class ProgramaController{
             $programa->guardar();      
         }
     }
-        $router->render2('/programas/actualizar', [
+        $router->render('/programas/actualizar', [
             'programa' => $programa,
             'errores' => $errores
         ]);
@@ -64,7 +64,7 @@ class ProgramaController{
         $programa = programa::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('programas/consultar' , [
+        $router->render('programas/consultar' , [
             'programa' => $programa
            
         ]);

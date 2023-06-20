@@ -7,9 +7,12 @@
 
     <nav class="sidebar-nav">
         <ul class="menu-horizontal">
-            <li> <a href="/">HOME</a> </li>
-            <li> <a href="/admin/admin">PERFIL</a> </li>
-            <li> <a href="#">CREAR</a>
+                       
+         
+            
+            <li> <a href="/"><i class="fa-solid fa-house dashboard__icono"></i> HOME</a> </li>
+            <li> <a href="/perfil/admin"><i class="fa-solid fa-user dashboard__icono"></i> PERFIL</a> </li>
+            <li> <a href="#"><i class="fa-solid fa-pencil dashboard__icono"></i> CREAR</a>
                 <ul style="--cantidad-items: 5">
                     <li> <a href="/aprendiz/crear">CREAR APRENDIZ</a> </li>  
                     <li> <a href="/empresas/crear">CREAR EMPRESA</a> </li>  
@@ -19,7 +22,7 @@
                     
                 </ul>
             </li>
-            <li> <a href="#">CONSULTAR</a>
+            <li> <a href="#"><i class="fa-solid fa-magnifying-glass dashboard__icono"></i> CONSULTAR</a>
                 <ul style="--cantidad-items: 5">
                     <li> <a href="/aprendiz/consultar">CONSULTAR APRENDIZ</a> </li> 
                     <li> <a href="/empresas/consultar">CONSULTAR EMPRESA</a> </li>   

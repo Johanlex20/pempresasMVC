@@ -1570,6 +1570,37 @@ table.aprendiz .imagen-tabla {
   background-color: hsl(0, 0%, 100%);
 }
 @media (min-width: 768px) {
+  .dashboard__contenedor-boton {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.dashboard__boton {
+  background-color: rgb(57, 169, 0);
+  padding: 1.5rem 4rem;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.8rem;
+  font-weight: 700;
+  border: none;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+.dashboard__boton:hover {
+  background-color: #287600;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .dashboard__boton {
+    width: auto;
+  }
+}
+@media (min-width: 768px) {
   .dashboard {
     display: flex;
     height: 100vh;
@@ -1581,7 +1612,7 @@ table.aprendiz .imagen-tabla {
 
 .sidebar {
   background-color: hsl(0, 0%, 52%);
-  width: 400px;
+  width: 300px;
   padding: 1rem;
 }
 .sidebar h2 {
@@ -1598,13 +1629,16 @@ table.aprendiz .imagen-tabla {
   margin-bottom: 1rem;
   padding: 0.7rem;
   transition-property: backgroud-color;
-  transition-duration: 300ms;
+  transition: 300ms background-color ease-in-out, 300ms color ease;
   font-weight: bold;
   font-size: 1.2rem;
 }
 .sidebar .sidebar-nav a:hover {
   background: linear-gradient(to right, rgb(56, 91, 86), rgb(57, 169, 0));
   border-radius: 0.5rem;
+}
+.sidebar .dashboard__icono {
+  font-size: 2rem;
 }
 .sidebar nav ul {
   margin: 0;
@@ -1632,7 +1666,7 @@ table.aprendiz .imagen-tabla {
   height: calc(var(--cantidad-items) * var(--cada-item));
 }
 .sidebar nav ul ul a {
-  background: linear-gradient(to right, rgb(56, 91, 86), rgb(57, 169, 0));
+  background: linear-gradient(to right, rgb(56, 91, 86), rgb(44, 43, 43));
 }
 .sidebar .logo-centrado img {
   width: 150px;
@@ -1645,7 +1679,7 @@ table.aprendiz .imagen-tabla {
 }
 
 .barra {
-  background-color: rgb(57, 169, 0);
+  background-color: rgb(44, 43, 43);
   padding: 1rem 2rem;
   box-shadow: -10px 20px 15px -15px rgba(0, 0, 0, 0.4);
   /*efecto cambia tono enlaces*/
@@ -1672,7 +1706,7 @@ table.aprendiz .imagen-tabla {
   text-decoration: none;
 }
 .barra .clic-boton a:hover {
-  color: rgb(56, 91, 86);
+  color: rgb(60, 206, 2);
   transition: all 0.3s;
 }
 .barra .clic-boton p {

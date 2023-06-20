@@ -10,11 +10,21 @@ use Controllers\OfertaController;
 use Controllers\ProgramaController;
 use Controllers\TipoidentificacionController;
 use Controllers\PaginasController;
+use Controllers\PerfilController;
+use Controllers\AplicarController;
 
 $router = new Router();
 
-//ZONA PRIVADA
-$router->get('/admin/admin', [AprendizController::class, 'index']);
+//APLICAR
+$router->get('/aplicar', [AplicarController::class, 'aplicar']);
+$router->post('/aplicar', [AplicarController::class, 'aplicar']);
+$router->get('/aplicar/consultar', [AplicarController::class, 'consultar']);
+$router->post('/aplicar/consultar', [AplicarController::class, 'consultar']);
+
+//ZONA ADMI
+$router->get('/perfil/admin', [PerfilController::class, 'indexA']);
+$router->get('/perfil/aprendiz', [PerfilController::class, 'indexZ']);
+$router->get('/perfil/empresa', [PerfilController::class, 'indexE']);
 
 $router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
 $router->get('/aprendiz/actualizar', [AprendizController::class, 'actualizar']);

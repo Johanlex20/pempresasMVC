@@ -3,7 +3,7 @@ namespace Model;
 
 class aprendiz extends ActiveRecord{
     protected static $tabla = 'aprendiz';
-    protected static $columnasDB = ['id', 'nombre', 'tipoId', 'identificacion', 'tipoPrograma', 'email', 'password', 'telefono', 'creacionaprendiz','admin','confirmado','token'];
+    protected static $columnasDB = ['id', 'nombre', 'tipoId', 'identificacion', 'tipoPrograma', 'email', 'password', 'telefono', 'creacionaprendiz','Idrol','confirmado','token'];
 
     public $id;
     public $nombre;
@@ -14,7 +14,7 @@ class aprendiz extends ActiveRecord{
     public $password;
     public $telefono;
     public $creacionaprendiz;
-    public $admin;
+    public $Idrol;
     public $confirmado;
     public $token;
 
@@ -30,7 +30,7 @@ class aprendiz extends ActiveRecord{
         $this->password2 = $args['password2'] ?? null;
         $this->telefono = $args['telefono'] ?? ''; 
         $this->creacionaprendiz = date('Y/m/d'); 
-        $this->admin = $args ['admin'] ?? '' ;
+        $this->Idrol = $args ['Idrol'] ?? '' ;
         $this->confirmado = $args ['confirmado'] ?? '';
         $this->token = $args ['token'] ?? '';
     }

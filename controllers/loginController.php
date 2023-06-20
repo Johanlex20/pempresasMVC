@@ -9,7 +9,6 @@ class LoginController{
     public static function login(Router $router){
 
         $errores = [];
-
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $auth = new aprendiz($_POST);
 
@@ -24,19 +23,22 @@ class LoginController{
                     if($aprendiz->comprobarPasswordAndVerificado($auth->password)){
                         //AUTENTICAR EL USUARIO
 
-                        //LLENAR EL ARREGLO DE SESSION
+                        //LLENAR EL ARREGLO DE SESSION                    
                         $_SESSION['id'] = $aprendiz->id;
                         $_SESSION['nombre'] = $aprendiz->nombre;
                         $_SESSION['email'] = $aprendiz->email;
                         $_SESSION['login'] = true;
+                        $_SESSION['Idrol'] = $aprendiz->Idrol;
 
                         //REDIRECCIONAMIENTO SI ES USUARIO EMPRESA O ADMIN
-                        if($aprendiz->admin === "1"){
-                            $_SESSION['admin'] = $aprendiz->admin ?? null;
-                            header('Location: /admin/admin');
-                        }else{
-                            header('Location: /login');
-                        }     
+                        if($aprendiz->Idrol === "1"){
+                            $_SESSION['admin'] = $aprendiz->Idrol ?? null;
+                            header('Location: /perfil/admin');
+                        }elseif($aprendiz->Idrol === "2"){
+                            header('Location: /perfil/empresa');
+                        } else{
+                            header('Location: /perfil/aprendiz');
+                        }       
                     }
                 }else{
                     aprendiz::setAlerta('error', 'Usuario No Encontrado');
@@ -44,13 +46,12 @@ class LoginController{
             }
         }  
         $errores = aprendiz::getErrores();
-        $router->render2('auth/login',[
+        $router->render('auth/login',[
             'errores' => $errores
         ]);
     }
-
     public static function mensaje (Router $router){
-        $router->render2('auth/mensaje');
+        $router->render('auth/mensaje');
     }
     public static function logout(){
         session_start();
@@ -58,9 +59,7 @@ class LoginController{
 
         header('Location: /');
     }
-
-    public static function confirmar(Router $router)
-    {
+    public static function confirmar(Router $router){
         $errores = [];
         
         $aprendiz = new Aprendiz;
@@ -76,20 +75,15 @@ class LoginController{
             $aprendiz->token = null;
             unset($aprendiz->password2);
             $aprendiz->guardar();    
-            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');         
-     
-        } 
-             
+            Aprendiz::setAlerta('exito', 'Cuenta Comprobada Correctamente');             
+        }            
         // OBTENER ALERTAS
-        $errores = Aprendiz::getErrores();
-        
+        $errores = Aprendiz::getErrores();      
         // ENVIO CORREO A LA VISTA CONFIRMADA
-        $router->render2('auth/confirmar', [
+        $router->render('auth/confirmar', [
             'errores' => $errores
         ]);
     }
-    
-
     public static function olvide(Router $router){
         $errores=[];
         
@@ -107,17 +101,16 @@ class LoginController{
 
                     //ENIVAR EL EMAIL
                     $email = new Email($aprendiz->email, $aprendiz->nombre, $aprendiz->token);
-                    $email->enviarInstrucciones();
+
                     //ALERTA DE EXITO
                     aprendiz::setAlerta('exito','Revisa tu email');
                 }else{
                     aprendiz::setAlerta('error','El Usuario no existe o no esta confirmado');
                 }
-            }
-            
+            }          
        }
        $errores = aprendiz::getErrores();
-       $router->render2('contraseña/olvide', [
+       $router->render('contraseña/olvide', [
             'mensaje'=>'Olvide mi Password',
             'errores'=>$errores
        ]);
@@ -148,21 +141,13 @@ class LoginController{
                 $aprendiz->token = null;
 
                 $resultado = $aprendiz->guardar();
-                // if($resultado){
-                //     header('Location: /');
-                // }
+                
             }
-
         }
-
-        // debuguear($aprendiz);
-        
         $errores = aprendiz::getErrores();
-        $router->render2('contraseña/recuperar',[
+        $router->render('contraseña/recuperar',[
             'errores' => $errores,
             'error' => $error
         ]);
-    }
-
-   
+    } 
 }

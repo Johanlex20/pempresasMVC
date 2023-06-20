@@ -2,7 +2,7 @@
 @use 'base/mixins' as m;
 
 .barra {
-    background-color: v.$green;
+    background-color: v.$gris-oscuro;
     padding: 1rem 2rem;
     box-shadow: -10px 20px 15px -15px rgba(0 , 0 , 0 , .4);
 
@@ -30,7 +30,7 @@
   
     /*efecto cambia tono enlaces*/
     .clic-boton a:hover {
-        color:v.$lead;
+        color:rgb(60, 206, 2);
         transition: all .3s ;
     }
     .clic-boton p {

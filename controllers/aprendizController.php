@@ -14,7 +14,7 @@ class AprendizController{
         $aprendiz = aprendiz::all();
         $resultado = $_GET ['resultado'] ?? null; //envia el mensaje de creacion de usuario
 
-        $router->render('admin/admin', [
+        $router->render('perfil/admin', [
             'aprendiz' => $aprendiz,
             'resultado' => $resultado
         ]);
@@ -36,7 +36,7 @@ class AprendizController{
             $aprendiz->sincronizar($_POST);   
             $errores = $aprendiz->validar();
 
-            $resultado = $aprendiz->existeUsuarioApren();
+            $resultado = $aprendiz->existeUsuario();
 
             if ($resultado->num_rows){
                 $errores = aprendiz::getErrores();
@@ -67,7 +67,7 @@ class AprendizController{
                 }
             }
         } 
-        $router->render2('aprendiz/crear' , [
+        $router->render('aprendiz/crear' , [
             'aprendiz' => $aprendiz,
             'tipoidentificacion' => $tipoidentificacion,
             'tipoprogramas' => $tipoprogramas,
@@ -76,7 +76,7 @@ class AprendizController{
     }
 
     public static function actualizar(Router $router){
-        $id = validarORedireccionar('/admin/admin');
+        $id = validarORedireccionar('/perfil/admin');
         $aprendiz = aprendiz::find($id);
         $tipoidentificacion = Tipoidentificacion::all();
         $tipoprogramas = programa::all(); 
@@ -98,7 +98,7 @@ class AprendizController{
             $aprendiz->guardar();      
         }
     }
-        $router->render2('/aprendiz/actualizar', [
+        $router->render('/aprendiz/actualizar', [
             'aprendiz' => $aprendiz,
             'tipoidentificacion' => $tipoidentificacion,
             'tipoprogramas' => $tipoprogramas,
@@ -110,7 +110,7 @@ class AprendizController{
         $aprendiz = aprendiz::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('aprendiz/consultar' , [
+        $router->render('aprendiz/consultar' , [
             'aprendiz' => $aprendiz
            
         ]);

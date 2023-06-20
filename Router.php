@@ -42,7 +42,7 @@ class Router {
 
         ];
 
-        $urlActual = $_SERVER ['PATH_INFO'] ?? '/';
+        $urlActual = strtok($_SERVER["REQUEST_URI"], '?') ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         if($metodo === 'GET'){
@@ -74,19 +74,17 @@ class Router {
         ob_start(); // Almacenamiento en memoria durante un momento...
         include __DIR__ . "/views/$view.php";
         $contenido = ob_get_clean(); // Limpia el buffer o lo que esta en memoria
-        include __DIR__ . "/views/layout.php";
-    }
 
-        //MOSTRANDO UNA VISTA
-        public function render2($view, $datos = [] ){
-
-            foreach($datos as $key => $value){
-                $$key = $value;
-            }
-    
-            ob_start(); // Almacenamiento en memoria durante un momento...
-            include __DIR__ . "/views/$view.php";
-            $contenido = ob_get_clean(); // Limpia el buffer o lo que esta en memoria
+        //UTILIZAR EL LAYOUT DE ACUERDO AL URL
+        $urlActual = strtok($_SERVER["REQUEST_URI"], '?') ?? '/';
+        if(str_contains($urlActual, '/perfil/admin')){
+            include __DIR__ . "/views/layout.php";
+        }elseif(str_contains($urlActual, '/perfil/aprendiz')){
+            include __DIR__ . "/views/layoutA.php";
+        }elseif(str_contains($urlActual, '/perfil/empresa')){
+            include __DIR__ . "/views/layoutE.php";
+        }else{
             include __DIR__ . "/views/layout2.php";
         }
+    }
 }

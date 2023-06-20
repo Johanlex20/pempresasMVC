@@ -9,7 +9,7 @@ class TipoidentificacionController{
         $tipoidentificacion = Tipoidentificacion::all();
         $resultado = $_GET ['resultado'] ?? null; //envia el mensaje de creacion de usuario
 
-        $router->render('admin/admin', [
+        $router->render('perfil/admin', [
             'tipoidentificacion' => $tipoidentificacion,
             'resultado' => $resultado
         ]);
@@ -36,7 +36,7 @@ class TipoidentificacionController{
             $tipoidentificacion->guardar();     
             }
         }
-        $router->render2('tipoidentificacion/crear' , [
+        $router->render('tipoidentificacion/crear' , [
             'tipoidentificacion' => $tipoidentificacion,
             'errores' => $errores
         ]);
@@ -65,7 +65,7 @@ class TipoidentificacionController{
             }
         }
 
-            $router->render2('/tipoidentificacion/actualizar', [
+            $router->render('/tipoidentificacion/actualizar', [
                 'tipoidentificacion' => $tipoidentificacion,
                 'errores' => $errores
             ]);
@@ -74,7 +74,7 @@ class TipoidentificacionController{
         $tipoidentificacion = Tipoidentificacion::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('tipoidentificacion/consultar' , [
+        $router->render('tipoidentificacion/consultar' , [
             'tipoidentificacion' => $tipoidentificacion
            
         ]);

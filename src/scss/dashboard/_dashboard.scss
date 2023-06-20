@@ -4,6 +4,23 @@
 .dashboard{
    background-color: v.$tex-white; 
 
+   &__contenedor-boton{
+      @include m.tablet{
+         display:flex;
+         justify-content: flex-end;
+      }
+   }
+
+   &__boton{
+       @include m.boton(v.$green, v.$tex-white);
+       text-decoration: none;
+       text-transform: uppercase;
+       font-size: 1.4rem;
+       @include m.tablet{
+         width:auto ;
+       }
+   }
+
    @include m.tablet {
         display: flex;
         height: 100vh; //vh = viewport higt altura de todo la pantalla

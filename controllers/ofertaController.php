@@ -12,7 +12,7 @@ class OfertaController{
         $oferta = ofertas::all();
         $resultado = $_GET ['resultado'] ?? null; //envia el mensaje de creacion de usuario
 
-        $router->render('admin/admin', [
+        $router->render('perfil/admin', [
             'oferta' => $oferta,
             'resultado' => $resultado
         ]);
@@ -52,14 +52,14 @@ class OfertaController{
                $oferta->guardar();     
             }
         }
-        $router->render2('ofertas/crear' , [
+        $router->render('ofertas/crear' , [
             'oferta' => $oferta,
             'tipoprogramas' => $tipoprogramas,
             'errores' => $errores
         ]);
     }
     public static function actualizar(Router $router){
-        $id = validarORedireccionar('/admin/admin');
+        $id = validarORedireccionar('/perfil/admin');
         $oferta =ofertas::find($id);
         $tipoprogramas = programa::all();
         $errores = ofertas::getErrores();
@@ -93,7 +93,7 @@ class OfertaController{
             }
         }
 
-            $router->render2('/ofertas/actualizar', [
+            $router->render('/ofertas/actualizar', [
                 'oferta' => $oferta,
                 'tipoprogramas' => $tipoprogramas,
                 'errores' => $errores
@@ -103,7 +103,7 @@ class OfertaController{
         $oferta = ofertas::all();
         $resultado =$_GET['resultado'] ??null;
 
-        $router->render2('ofertas/consultar' , [
+        $router->render('ofertas/consultar' , [
             'oferta' => $oferta          
         ]);
     } 
