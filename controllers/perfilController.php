@@ -18,4 +18,19 @@ class PerfilController {
             'titulo' => 'Perfil de Empresa'
         ]);
     }
+    public static function crear (Router $router){
+        $router->render('perfil/admin-crear',[
+            'titulo' => 'Zona Admin Creación'
+        ]);
+    }
+    public static function consultar (Router $router){
+        $router->render('perfil/admin-consultar',[
+            'titulo' => 'Zona Admin Consultar'
+        ]);
+    }
+    public static function apli (Router $router){
+        $router->render('perfil/admin-apli',[
+            'titulo' => 'Zona Admin Aplicaciones'
+        ]);
+    }
 }

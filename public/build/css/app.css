@@ -1570,12 +1570,23 @@ table.aprendiz .imagen-tabla {
   background-color: hsl(0, 0%, 100%);
 }
 @media (min-width: 768px) {
-  .dashboard__contenedor-boton {
+  .dashboard {
     display: flex;
-    justify-content: flex-end;
+    height: 100vh;
   }
 }
-.dashboard__boton {
+.dashboard .principal {
+  flex: 1;
+}
+
+.contenedorp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.botonp {
+  margin: 20px 50px 20px 50px;
   background-color: rgb(57, 169, 0);
   padding: 1.5rem 4rem;
   color: hsl(0, 0%, 100%);
@@ -1591,23 +1602,28 @@ table.aprendiz .imagen-tabla {
   text-transform: uppercase;
   font-size: 1.4rem;
 }
-.dashboard__boton:hover {
+.botonp:hover {
   background-color: #287600;
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  .dashboard__boton {
-    width: auto;
+  .botonp {
+    width: 30rem;
   }
 }
-@media (min-width: 768px) {
-  .dashboard {
-    display: flex;
-    height: 100vh;
-  }
+
+.botonesP {
+  display: flex;
+  flex-direction: column;
 }
-.dashboard .principal {
-  flex: 1;
+
+img {
+  width: 60%;
+  height: auto;
+}
+
+.imgperfil22 {
+  width: 49%;
 }
 
 .sidebar {
@@ -1668,14 +1684,31 @@ table.aprendiz .imagen-tabla {
 .sidebar nav ul ul a {
   background: linear-gradient(to right, rgb(56, 91, 86), rgb(44, 43, 43));
 }
-.sidebar .logo-centrado img {
-  width: 150px;
+.sidebar .logo-centrado {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .sidebar .logo-centrado a {
-  margin: 0;
+  width: 100%;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+.sidebar .logo-centrado img {
+  width: 150px;
+}
+.sidebar .imgperfil {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .barra {
@@ -1711,6 +1744,15 @@ table.aprendiz .imagen-tabla {
 }
 .barra .clic-boton p {
   padding: 0 0;
+}
+
+.perfilimg {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border: 6px solid rgb(56, 91, 86);
+  border-radius: 20%;
+  margin: 10px 10px;
 }
 
 .alerta {

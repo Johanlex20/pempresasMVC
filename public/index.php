@@ -25,9 +25,11 @@ $router->post('/aplicar/consultar', [AplicarController::class, 'consultar']);
 $router->get('/perfil/admin', [PerfilController::class, 'indexA']);
 $router->get('/perfil/aprendiz', [PerfilController::class, 'indexZ']);
 $router->get('/perfil/empresa', [PerfilController::class, 'indexE']);
+$router->get('/perfil/admin-crear', [PerfilController::class, 'crear']);
+$router->get('/perfil/admin-consultar', [PerfilController::class, 'consultar']);
+$router->get('/perfil/admin-apli', [PerfilController::class, 'apli']);
 
-//ZONA PRIVADA
-
+//ZONA PRIVADA APRENDIZ
 $router->get('/aprendiz/crear', [AprendizController::class, 'crear']);
 $router->get('/aprendiz/actualizar', [AprendizController::class, 'actualizar']);
 $router->get('/aprendiz/consultar', [AprendizController::class, 'consultar']);
@@ -36,6 +38,7 @@ $router->post('/aprendiz/actualizar', [AprendizController::class, 'actualizar'])
 $router->post('/aprendiz/consultar', [AprendizController::class, 'consultar']);
 $router->post('/aprendiz/eliminar', [AprendizController::class, 'eliminar']);
 
+//ZONA PRIVADA EMPRESAS
 $router->get('/empresas/crear', [EmpresaController::class, 'crear']);
 $router->get('/empresas/actualizar', [EmpresaController::class, 'actualizar']);
 $router->get('/empresas/consultar', [EmpresaController::class, 'consultar']);
