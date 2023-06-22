@@ -1,0 +1,46 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+    .perfilimg{
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border: 6px solid v.$lead;
+        border-radius : 20%;
+        margin: 80px 30px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+       }
+
+    .contenedor-perfil{
+        margin: 50px;
+        border-radius: 20px;  
+        display: flex;
+    }   
+
+    .perfil{
+        width: 60%;
+        
+        padding: 20px;
+        h2{
+            color: v.$lead;
+            font-weight: 700;
+            text-transform: uppercase;  
+            margin-bottom: 50px; 
+            
+        }
+        .datos-perfil{
+            color: v.$lead;
+            font-size: 24px;
+            font-weight: 300;
+            text-transform: uppercase;    
+        }
+
+        .datos{
+            margin-bottom: 10px;
+            padding: 10px ;
+            border: 6px solid v.$lead;
+            border-radius: 10px;    
+            box-shadow: 0 12px 14px rgba(0, 0, 0, 0.2);
+        }
+    }
+ 
