@@ -22,8 +22,8 @@ class Email {
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = '2ee2dccb2b476d';
-        $mail->Password = '697d36db74ca43';
+        $mail->Username = '006c6be856308b';
+        $mail->Password = 'e47da5257b5474';
 
         $mail->setFrom('EmpleoSenaCME@SENA.com');
         $mail->addAddress('EmpleoSenaCME@SENA.com','EmpleoSenaCME.com');
@@ -52,8 +52,8 @@ class Email {
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
         $mail->Port = 2525;
-        $mail->Username = '2ee2dccb2b476d';
-        $mail->Password = '697d36db74ca43';
+        $mail->Username = '006c6be856308b';
+        $mail->Password = 'e47da5257b5474';
 
         $mail->setFrom('EmpleoSenaCME@SENA.com');
         $mail->addAddress('EmpleoSenaCME@SENA.com','EmpleoSenaCME.com');

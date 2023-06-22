@@ -1,6 +1,9 @@
 <?php
 namespace Controllers;
 use MVC\Router;
+use Model\aprendiz;
+use Model\programa;
+use Model\Tipoidentificacion;
 
 class PerfilController {
     public static function indexA (Router $router){
@@ -8,12 +11,12 @@ class PerfilController {
             'titulo' => 'Perfil de Administración'
         ]);
     }
-        public static function indexZ (Router $router){
+    public static function indexZ (Router $router){
         $router->render('perfil/aprendiz',[
             'titulo' => 'Perfil de Aprendiz'
         ]);
     }
-        public static function indexE (Router $router){
+    public static function indexE (Router $router){
         $router->render('perfil/empresa',[
             'titulo' => 'Perfil de Empresa'
         ]);
@@ -33,4 +36,36 @@ class PerfilController {
             'titulo' => 'Zona Admin Aplicaciones'
         ]);
     }
+    
+    // public static function actualizar(Router $router){
+    //     $id = validarORedireccionar('/perfil/admin');
+    //     $aprendiz = aprendiz::find($id);
+    //     $tipoidentificacion = Tipoidentificacion::all();
+    //     $tipoprogramas = programa::all(); 
+    //     $errores = aprendiz::getErrores();
+
+    //     // METODO POST PARA ACTUALIZAR
+    //     if($_SERVER['REQUEST_METHOD']==='POST'){
+
+    //     //ASIGNAR LOS ATRIBUTOS
+    //     $args = $_POST['aprendiz'];
+
+    //     $aprendiz->sincronizar($args);
+        
+    //     //VALIDACION
+    //     $errores = $aprendiz->validar();
+
+    //     //REVISAR QUE EL ARRAY DE ERRORES ESTE VACIO
+    //     if(empty($errores)){  //empty es la funcion que reviza los arreglos esten vacios
+    //         $aprendiz->guardar();      
+    //     }
+    // }
+    //     $router->render('/aprendiz/actualizar', [
+    //         'aprendiz' => $aprendiz,
+    //         'tipoidentificacion' => $tipoidentificacion,
+    //         'tipoprogramas' => $tipoprogramas,
+    //         'errores' => $errores
+    //     ]);
+    // }
+
 }

@@ -71,9 +71,7 @@ class ActiveRecord {
             echo "Actualizado Correctamente";
             if(session_start()){
 
-                header('Location: /?resultado=2');
-
-                header('Location: /perfil/admin?resultado=2');
+                header('Location: /mensaje?resultado=2');
 
             }else{
                 header('Location: /?resultado=1');

@@ -1752,7 +1752,38 @@ img {
   object-fit: cover;
   border: 6px solid rgb(56, 91, 86);
   border-radius: 20%;
-  margin: 10px 10px;
+  margin: 80px 30px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.contenedor-perfil {
+  margin: 50px;
+  border-radius: 20px;
+  display: flex;
+}
+
+.perfil {
+  width: 60%;
+  padding: 20px;
+}
+.perfil h2 {
+  color: rgb(56, 91, 86);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+.perfil .datos-perfil {
+  color: rgb(56, 91, 86);
+  font-size: 24px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.perfil .datos {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 6px solid rgb(56, 91, 86);
+  border-radius: 10px;
+  box-shadow: 0 12px 14px rgba(0, 0, 0, 0.2);
 }
 
 .alerta {

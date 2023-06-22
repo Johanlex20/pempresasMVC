@@ -4,6 +4,7 @@
         session_start();
     }
     $auth = $_SESSION['login'] ?? false;
+
 ?>
 
 <!DOCTYPE html>
@@ -50,11 +51,32 @@
                     <div id="mini_menu"></div>
                 <nav id="nav">
                      <!-- <img src="/build/img/logo-de-Sena-sin-fondo-Blanco.png" alt="">  -->
+
+                    <?php
+                        $idrol = isset($_SESSION['Idrol']) ? $_SESSION['Idrol'] : null;       
+                    ?>
+
                     <ul>
                         <li><a href="/">HOME</a></li>
-                        <?php  if ($auth): ?>
-                            <li><a href="/admin/admin">Perfil</a></li>
-                        <?php endif; ?> 
+                        <?php  if ($auth && $idrol): ?>
+
+                            <?php switch ($idrol) {
+                                  case 1:
+                                    echo '<li><a href="/perfil/admin">Perfil</a></li>';
+                                    break;
+                                  case 2:
+                                    echo '<li><a href="/perfil/empresa">Perfil</a></li>';
+                                    break;
+                                  case 3:
+                                    echo '<li><a href="/perfil/aprendiz">Perfil</a></li>';
+                                    break;
+                                  default:
+                                    // Caso por defecto si $idrol no coincide con ninguno de los casos anteriores
+                                    break;
+                                } ?>
+
+                        <?php endif; ?>
+
                         <li><a href="/anuncios">Ofertas</a></li>
                         <li><a href="/hojadevida">hoja de vida</a></li>
                         <li><a href="/nosotros">Contacto</a></li>

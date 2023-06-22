@@ -29,6 +29,7 @@ class LoginController{
                         $_SESSION['email'] = $aprendiz->email;
                         $_SESSION['login'] = true;
                         $_SESSION['Idrol'] = $aprendiz->Idrol;
+                        $_SESSION['telefono'] = $aprendiz->telefono;
 
                         //REDIRECCIONAMIENTO SI ES USUARIO EMPRESA O ADMIN
 
@@ -102,7 +103,8 @@ class LoginController{
 
                     //ENIVAR EL EMAIL
                     $email = new Email($aprendiz->email, $aprendiz->nombre, $aprendiz->token);
-
+                    $email->enviarInstrucciones();
+                    
                     //ALERTA DE EXITO
                     aprendiz::setAlerta('exito','Revisa tu email');
                 }else{
@@ -151,4 +153,5 @@ class LoginController{
             'error' => $error
         ]);
     } 
+    
 }
