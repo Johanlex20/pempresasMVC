@@ -30,7 +30,7 @@ class aprendiz extends ActiveRecord{
         $this->password2 = $args['password2'] ?? null;
         $this->telefono = $args['telefono'] ?? ''; 
         $this->creacionaprendiz = date('Y/m/d'); 
-        $this->Idrol = $args ['Idrol'] ?? '' ;
+        $this->Idrol = $args ['Idrol'] ?? '3' ;
         $this->confirmado = $args ['confirmado'] ?? '';
         $this->token = $args ['token'] ?? '';
     }

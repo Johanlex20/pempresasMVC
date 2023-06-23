@@ -79,8 +79,7 @@
 
                         <li><a href="/anuncios">Ofertas</a></li>
                         <li><a href="/hojadevida">hoja de vida</a></li>
-                        <li><a href="/nosotros">Contacto</a></li>
-                        <!-- <li><a href="/eleccion">Registro</a></li> -->
+                        <!-- <li><a href="/nosotros">Contacto</a></li> -->
                         <?php  if (!$auth): ?>
                             <li><a href="/eleccion">Registro</a></li>
                         <?php endif; ?>

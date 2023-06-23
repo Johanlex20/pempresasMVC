@@ -50,58 +50,58 @@
             </main>
         </div>
         <div class="contenido_textoprincipal2">
-            <section class="primer_icono">
+
+                <div class="iconoshv"> 
+                    <div class="icono1">
+                        <h4> Plantilla HV SENA </h4>
+                        <div class="iconos">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="96" height="96" viewBox="0 0 24 24" stroke-width="2" stroke="#00324D" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+                                <rect x="9" y="3" width="6" height="4" rx="2" />
+                                <line x1="9" y1="12" x2="9.01" y2="12" />
+                                <line x1="13" y1="12" x2="15" y2="12" />
+                                <line x1="9" y1="16" x2="9.01" y2="16" />
+                                <line x1="13" y1="16" x2="15" y2="16" />
+                                </svg>
+                        </div>
+                        <a class= "link_word" download="hoja-de-vida-sena-word" href="\archivos\hv.docx">Descargar Word</a>
+                        <br>
+                        <a class= "link_pdf" download="hoja-de-vida-sena-pdf" href="\archivos\pdfhv.pdf">Descargar PDF</a >
+                    </div>
                 
-                <div class="icono1">
-                    <h4> Plantilla HV SENA </h4>
+
+
+
+                    <div class="icono2">
+                        <h4>¿Como realizar tu HV?</h4>
+                        <div class="iconos">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="96" height="96" viewBox="0 0 24 24" stroke-width="2" stroke="#00324D" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
+                                <rect x="3" y="6" width="12" height="12" rx="2" />
+                            </svg>
+                        </div>
+                        <a class = "link_video"  href="https://www.youtube.com/watch?v=E21qOCli5uU">Ver video</a>
+                    </div>
+
+                
+
+                    <div class="icono3">
+                    <h4>Tips de como presentar tu HV</h4>
                     <div class="iconos">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-list" width="96" height="96" viewBox="0 0 24 24" stroke-width="2" stroke="#00324D" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
-                            <rect x="9" y="3" width="6" height="4" rx="2" />
-                            <line x1="9" y1="12" x2="9.01" y2="12" />
-                            <line x1="13" y1="12" x2="15" y2="12" />
-                            <line x1="9" y1="16" x2="9.01" y2="16" />
-                            <line x1="13" y1="16" x2="15" y2="16" />
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-files" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="#00324D" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 3v4a1 1 0 0 0 1 1h4" />
+                                <path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" />
+                                <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
                             </svg>
                     </div>
-                    <a class= "link_word" download="hoja-de-vida-sena-word" href="\archivos\hv.docx">Descargar Word</a>
-                    <br>
-                    <a class= "link_pdf" download="hoja-de-vida-sena-pdf" href="\archivos\pdfhv.pdf">Descargar PDF</a >
-                </div>
-                
-            </section>
-
-            <section class="segundo_icono">
-                <div class="icono2">
-                    <h4>¿Como realizar tu HV?</h4>
-                    <div class="iconos">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-video" width="96" height="96" viewBox="0 0 24 24" stroke-width="2" stroke="#00324D" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M15 10l4.553 -2.276a1 1 0 0 1 1.447 .894v6.764a1 1 0 0 1 -1.447 .894l-4.553 -2.276v-4z" />
-                            <rect x="3" y="6" width="12" height="12" rx="2" />
-                        </svg>
-                    </div>
-                    <a class = "link_video"  href="https://www.youtube.com/watch?v=E21qOCli5uU">Ver video</a>
-                </div>
-            </section>
-                
-            <section class="tercer_icono">
-                <div class="icono3">
-                <h4>Tips de como presentar tu HV</h4>
-                <div class="iconos">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-files" width="100" height="100" viewBox="0 0 24 24" stroke-width="2" stroke="#00324D" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M15 3v4a1 1 0 0 0 1 1h4" />
-                            <path d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" />
-                            <path d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
-                        </svg>
-                </div>
-                
-                <a class = "link_tips"  href="https://www.youtube.com/watch?v=KgohPG7HKw4&t=23s&ab_channel=SENA">Ver tips</a>
+                    
+                    <a class = "link_tips"  href="https://www.youtube.com/watch?v=KgohPG7HKw4&t=23s&ab_channel=SENA">Ver tips</a>
 
                 </div>              
-            </section>            
-        </div>
+        </div>  
+        
     </section>
 </div>

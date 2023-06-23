@@ -7,6 +7,15 @@
         <?php
             include 'listado.php';
         ?>
+        <?php
+            include 'listado.php';
+        ?>
+        <?php
+            include 'listado.php';
+        ?>
+        <?php
+            include 'listado.php';
+        ?>
         
     </div> <!-- CONTINIDO ANUNCIOS --> 
 </section>
